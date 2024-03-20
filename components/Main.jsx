@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import {Cursor, useTypewriter} from "react-simple-typewriter";
 import BgCircles from './BgCircles';
 import Spline from './Spline.jsx';
-import Word from "./Word";
+// import Word from "./Word";
 const Main = () => {
   return (
     <div id='home' className='w-full h-screen text-center z-10'>
