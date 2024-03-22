@@ -107,6 +107,7 @@ const resume = () => {
           <p className='py-2'>
             <span className='font-bold'>Technical Skills</span>
             <span className='px-2'>|</span>Full Stack Web Developer
+            <span className='px-2'>|</span>Backend Developer
             <span className='px-2'>|</span>PHP
             <span className='px-2'>|</span>Laravel
             <span className='px-2'>|</span>HTML
