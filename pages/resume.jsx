@@ -225,7 +225,7 @@ const resume = () => {
               Expert in third-party API integration (SOAP/XML/JSON) and rapid resolution of bug/defect issues within 24 hours, improving product quality
             </li>
             <li>
-              Enhanced system performance through RESTful API analysis, facilitating seamless data exchange between front-end and back-end systems.
+              Enhanced system performance through RESTful API analysis, facilitating seamless data exchange between front-end and back-end systems
             </li>
             <li>
               Achieved reduction in loading times for critical application functionalities through coding optimizations
