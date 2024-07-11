@@ -144,28 +144,28 @@ const resume = () => {
           <p className='py-1 italic'>Full Stack Web Developer (Aug-2023 - present)</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
-              Developed and maintained the Elevator Portal, an online platform for the elevator industry, streamlining planning and calculations.
+              Developed and maintained the Elevator Portal, an online platform for the elevator industry, streamlining planning and calculations
             </li>
             <li>
-              Created a user-friendly, globally accessible system for elevator professionals, saving time and enhancing material optimization.
+              Created a user-friendly, globally accessible system for elevator professionals, saving time and enhancing material optimization
             </li>
             <li>
-              Implemented database-driven tools for elevator system planning, configuration, and component calculations.
+              Implemented database-driven tools for elevator system planning, configuration, and component calculations
             </li>
             <li>
-              Ensured data accuracy through automatic plausibility checks and standard-compliant design.
+              Ensured data accuracy through automatic plausibility checks and standard-compliant design
             </li>
             <li>
-              Enhanced user experience with features allowing component selection and document printing.
+              Collaborated with team: Worked with team members to design and implement data conversion processes, ensuring seamless integration with existing systems and improving data accuracy
             </li>
             <li>
-              Collaborated with cross-functional teams to improve Elevator Portal functionality.
+              Conducted testing and debugging: Led thorough testing and debugging to verify data integrity, resulting in a reduction in error rates
             </li>
             <li>
-              Provided technical support for a seamless user experience.
+              Documented processes and workflows to facilitate knowledge sharing and increase team productivity
             </li>
             <li>
-              Maintained Elevator Portal for real-time updates and adaptability.
+              Provided technical support to ensure a seamless user experience and maintained the Elevator Portal for real-time updates and adaptability
             </li>
           </ul>
         </div>
@@ -184,28 +184,19 @@ const resume = () => {
               Designed cross-browser and cross-device compatible websites - &quot;Smart Project Management (SPM)&quot;, &quot;BR Component Prototype Tool and &quot;Application Product Selector (APS)&quot;
             </li>
             <li>
-              Enhanced login & data security with Single Sign-On, JWT in Restful API and Cookie Management, resulting in 60% increase in user security.
+              Design secure, maintainable, scalable architecture as well as responsive user interfaces of these applications according to customer-specific and business requirements
             </li>
             <li>
-                Established efficient, reusable services for user management, boosting global user management efficiency by 50%.
+              Improved high-performance by testing and fixing bugs, documenting processes, creating and testing RESTful APIs using Postman to serve 150+ worldwide project information as well as 200+ concurrent solution partners data to the frontend
             </li>
             <li>
-              Resolved over 25+ critical bugs in company products and optimize customer-sales and sales-business relationships to improved customer satisfaction.
+              Developed authentication, authorization services for APIs and implemented a robust role management system for global users
             </li>
             <li>
-              Developed REST APIs for frontend-backend integration, increasing data exchange efficiency by 30%.
+              Other features included Two-factor authentication, project tracking systems, and testing application, alongside Lazy-loading routing and server-side validations
             </li>
             <li>
-              Implemented robust testing and continuous integration methods, reducing post-release bugs by 30% and improving code maintainability.
-            </li>
-            <li>
-              Created and maintained project documentation, including architecture diagrams and user manuals, for comprehensive user & developer resources.
-            </li>
-            <li>
-              Successfully delivered projects on time and within budget using Agile methodologies.
-            </li>
-            <li>
-              Strong collaboration and communication skills for effective teamwork across departments.
+              Utilized Agile methodologies to ensure timely and budget-conscious project delivery, while fostering effective cross-departmental collaboration through strong communication skills
             </li>
           </ul>
         </div>
@@ -215,29 +206,41 @@ const resume = () => {
         <div className='py-6'>
           <p className='italic'>
             <span className='font-bold italic'>
-              eZee Technosys Pvt.Ltd.
+              Yanolja Cloud Solution, (formerly eZee)
             </span>
             <span className='px-2'>|</span>Surat, India.
           </p>
           <p className='py-1 italic'>Associate Software Engineer (PHP Developer) (Sep-2016 - Mar-2021)</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
-              Integrated new channels and enhanced existing ones using third-party APIs as a Channel Manager Executive.
+              Integrated new channels and enhanced existing ones using third-party APIs as a Channel Manager Executive
             </li>
             <li>
-              Provided top-notch technical support to key channel partners, including HostelWorld, Agoda.com, Traveloka, Goibibo, and Paytm.
+              Provided top-notch technical support to key channel partners, including HostelWorld, Agoda.com, Traveloka, Goibibo, and Paytm
             </li>
             <li>
-              Efficiently managed channels, resulting in a 25% increase in partner satisfaction and a 15% revenue boost for partners like Booking.com, Expedia, and Airbnb.
+              Efficiently managed channels, resulting in increased in partner satisfaction and revenue boost for partners like Booking.com, Expedia, and Airbnb
             </li>
             <li>
-              Expert in third-party API integration (SOAP/XML/JSON) and rapid resolution of 95% of bug/defect issues within 24 hours, improving product quality.
+              Expert in third-party API integration (SOAP/XML/JSON) and rapid resolution of bug/defect issues within 24 hours, improving product quality
             </li>
             <li>
-              Effectively handled priority technical support, leading to a 20% reduction in product bugs and defects.
+              Enhanced system performance through RESTful API analysis, facilitating seamless data exchange between front-end and back-end systems.
             </li>
             <li>
-              Demonstrated exceptional collaboration, self-organization, and dedication, ensuring 100% on-time project delivery.
+              Achieved reduction in loading times for critical application functionalities through coding optimizations
+            </li>
+            <li>
+              Reduced database query time, streamlining data storage and management processes for improved application performance
+            </li>
+            <li>
+              Collaborated with the QA team to decrease post-deployment issues through comprehensive testing methodologies
+            </li>
+            <li>
+              Demonstrated exceptional collaboration, self-organization, and dedication, ensuring 100% on-time project delivery
+            </li>
+            <li>
+              Effectively handled priority technical support, leading to reduction in product bugs and defects
             </li>
           </ul>
         </div>
