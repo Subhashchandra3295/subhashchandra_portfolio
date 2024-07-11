@@ -245,6 +245,31 @@ const resume = () => {
           </ul>
         </div>
 
+         {/* Experience */}
+         <div className='py-6'>
+          <p className='italic'>
+            <span className='font-bold italic'>
+            TechLeaper Systems Pvt. Ltd
+            </span>
+            <span className='px-2'>|</span>Pune, India.
+          </p>
+          <p className='py-1 italic'>Intern- Unity Game Developer (Jan-2016 - June-2016)</p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
+            <li>
+              Developed gameplay mechanics, UI features, and game systems for mobile and PC games using unity3D
+            </li>
+            <li>
+              Collaborated with artists and designers to implement game assets and visual effects
+            </li>
+            <li>
+              Optimized game performance and memory usage for smooth gameplay experience across various devices
+            </li>
+            <li>
+              Successfully launched “Nuts Run” video game using technologies such as Unity, C#, and JavaScript
+            </li>
+          </ul>
+        </div>
+
         {/*  */}
        {/*  <h5 className='text-center underline text-[18px] py-4'>
           Learning
