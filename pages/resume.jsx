@@ -110,6 +110,7 @@ const resume = () => {
             <span className='px-2'>|</span>Backend Developer
             <span className='px-2'>|</span>PHP
             <span className='px-2'>|</span>Laravel
+            <span className='px-2'>|</span>Symfony
             <span className='px-2'>|</span>HTML
             <span className='px-2'>|</span>CSS
             <span className='px-2'>|</span>Bootstrap
@@ -126,7 +127,7 @@ const resume = () => {
             </p>
           <p className='py-2'>
             <span className='font-bold'>Learning</span>
-            <span className='px-2'>|</span>Symfony, Laravel, React, Next JS, Docker
+            <span className='px-2'>|</span>React, Next JS, Docker
           </p>
         </div>
 
@@ -141,7 +142,7 @@ const resume = () => {
             </span>
             <span className='px-2'>|</span>Bobingen (Remote), Germany.
           </p>
-          <p className='py-1 italic'>Full Stack Web Developer (Aug-2023 - present)</p>
+          <p className='py-1 italic'>Full Stack Web Developer (Aug-2023 - July-2024)</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
               Developed and maintained the Elevator Portal, an online platform for the elevator industry, streamlining planning and calculations
