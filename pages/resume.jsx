@@ -126,7 +126,6 @@ const resume = () => {
             <span className="px-2">|</span>JQuery
             <span className="px-2">|</span>Angular
             <span className="px-2">|</span>React
-            <span className="px-2">|</span>Vue
             <span className="px-2">|</span>NextJS
             <span className="px-2">|</span>Javascript
             <span className="px-2">|</span>Typescript
