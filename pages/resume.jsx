@@ -160,50 +160,25 @@ const resume = () => {
           </p>
           <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
             <li>
-              Designed and developed Research Information Systems (RIS) to
-              support research management, evaluation, and reporting processes.
+              Eliminated 40% manual processing by digitizing research and administrative workflows across multiple departments
             </li>
             <li>
-              Planned and implemented digitization projects for administrative
-              and research workflows, improving operational efficiency.
+              Accelerated page load time by 25% through query optimization and caching (Angular, React, Laravel, MySQL)
             </li>
             <li>
-              Built and maintained database-driven web applications using
-              Laravel (PHP MVC framework), MySQL, and modern frontend frameworks
-              such as Angular and React, ensuring scalable and responsive user
-              interfaces.
+              Designed and maintained 10+ RESTful APIs integrating external partner systems with high reliability
             </li>
             <li>
-              Built and enhanced document management systems (DMS) for
-              structured storage and retrieval of institutional data.
+              Built a structured document management system improving retrieval and audit traceability for large datasets
             </li>
             <li>
-              Collaborated cross-functionally with researchers, administration,
-              and IT teams to deliver scalable and user-centric solutions.
+              Raised test coverage to 80% by enforcing clean code, OOP, and modular architecture
             </li>
             <li>
-              Improved controlling and planning tools, enabling better
-              data-driven decision-making and reporting accuracy.
+              Ensured 99% uptime on GDPR-compliant systems through monitoring and rapid issue resolution
             </li>
             <li>
-              Performed software maintenance, monitoring, and optimization of
-              internal web applications.
-            </li>
-            <li>
-              Ensured software quality assurance, including testing, debugging,
-              and documentation of developed systems.
-            </li>
-            <li>
-              Created technical documentation, user guides, and training
-              materials to support internal users and stakeholders.
-            </li>
-            <li>
-              Ensured compliance with data protection regulations (GDPR) while
-              handling sensitive research and administrative data.
-            </li>
-            <li>
-              Contributed to agile project environments, working on both
-              small-scale and large institutional projects.
+              Streamlined workflows for stakeholders by replacing manual processes with custom web tools
             </li>
           </ul>
         </div>
@@ -219,33 +194,25 @@ const resume = () => {
           </p>
           <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
             <li>
-              Developed and maintained the Elevator Portal, a globally
-              accessible platform used by elevator companies of various sizes.
+              Scaled enterprise platform supporting 500+ concurrent users across multiple countries
             </li>
             <li>
-              Built database-driven web applications using Laravel (PHP MVC),
-              MySQL, Angular/React, HTML, and CSS.
+              Cut release cycle time by 30% by migrating monolithic architecture to microservices (6+ services)
             </li>
             <li>
-              Implemented engineering calculation modules for elevator component
-              design in compliance with industry standards.
+              Architected 15+ REST APIs improving inter-service communication and reducing latency
             </li>
             <li>
-              Developed tools for system planning, configuration, and component
-              calculations, improving operational efficiency.
+              Decreased bug regression by 35% using OOP, dependency injection, and structured architecture patterns
             </li>
             <li>
-              Created analytical dashboards and reports to support data-driven
-              decision-making Optimized system performance and ensured
-              scalability, reliability, and real-time updates
+              Increased test coverage to 75% and established code review practices across the team
             </li>
             <li>
-              Provided technical support and maintenance, ensuring high
-              availability and seamless user experience.
+              Slashed deployment time significantly using Docker and CI/ CD pipelines
             </li>
             <li>
-              Documented workflows and system processes to enhance knowledge
-              sharing and team productivity.
+              Delivered GDPR-compliant solutions in Agile/ Scrum environments
             </li>
           </ul>
         </div>
@@ -262,33 +229,22 @@ const resume = () => {
           </p>
           <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
             <li>
-              Developed scalable web applications including Smart Project
-              Management (SPM), Component Prototype Tool, and Application
-              Product Selector (APS)
+              Built 3 enterprise applications used by global engineering teams across multiple countries
             </li>
             <li>
-              Designed secure, scalable architectures and responsive UI aligned
-              with business requirements
+              Reduced manual data entry by 50% through API integrations across internal systems
             </li>
             <li>
-              Built and tested RESTful APIs (Postman) supporting 150+ global
-              projects and 200+ partner datasets
+              Boosted release stability by 40% via CI/ CD pipelines and Azure DevOps
             </li>
             <li>
-              Implemented authentication, authorization, and role-based access
-              control for global users
+              Secured 500+ users with authentication, RBAC, and 2FA implementation
             </li>
             <li>
-              Developed features such as two-factor authentication, project
-              tracking systems, and validation mechanisms
+              Optimized API performance by 30% through debugging and query optimization
             </li>
             <li>
-              Improved application performance through bug fixing, testing, and
-              optimization
-            </li>
-            <li>
-              Applied Agile methodologies to deliver projects efficiently and
-              collaborate across teams
+              Delivered features on time in Agile development cycles
             </li>
           </ul>
         </div>
@@ -306,40 +262,24 @@ const resume = () => {
           </p>
           <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
             <li>
-              Integrated and managed third-party APIs (SOAP, XML, JSON) for
-              global travel platforms
+              • Integrated 20+ third-party APIs including Booking.com, Expedia, Airbnb, and Agoda
             </li>
             <li>
-              Worked with major partners including Booking.com, Expedia, Airbnb,
-              Agoda, and Traveloka
+              Processed 10,000+ daily transactions ensuring high reliability and data consistency
             </li>
             <li>
-              Developed and optimized RESTful APIs to enable seamless
-              communication between systems
+              Strengthened database performance by 30% through query optimization and indexing
             </li>
             <li>
-              Reduced application load times by 30% through query optimization
+              Sustained 99.5% uptime during peak usage periods with proactive system monitoring
             </li>
             <li>
-              Resolved bugs and defects within tight SLAs, improving overall
-              system stability and reliability
-            </li>
-            <li>
-              Implemented MVC architecture to enhance application scalability
-              and maintainability
-            </li>
-            <li>
-              Collaborated with QA teams to reduce post-deployment issues
-              through rigorous testing
-            </li>
-            <li>
-              Delivered technical support for high-priority issues, improving
-              partner satisfaction and system uptime
+              Reduced feature delivery time by 25% by refactoring legacy systems using MVC architecture
             </li>
           </ul>
         </div>
 
-        {/* Experience */}
+        {/*
         <div className="py-6">
           <p className="italic">
             <span className="font-bold italic">
@@ -368,7 +308,7 @@ const resume = () => {
               Run”, utilizing Unity, C#, and JavaScript
             </li>
           </ul>
-        </div>
+        </div>*/}
 
         {/*  */}
         {/*  <h5 className='text-center underline text-[18px] py-4'>
