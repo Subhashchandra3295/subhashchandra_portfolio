@@ -8,6 +8,7 @@ const translations = {
       home: 'Home',
       about: 'About',
       skills: 'Skills',
+      projects: 'Projects',
       resume: 'Resume',
       contact: 'Contact',
       tagline: "Let's build something legendary together",
@@ -37,6 +38,43 @@ const translations = {
     skills: {
       title: 'Skills',
       subtitle: 'What I Can Do',
+    },
+    projects: {
+      title: 'Projects',
+      subtitle: 'Selected Case Studies',
+      intro:
+        'Portfolio-safe concept projects that show how I approach real-world full stack problems with Laravel, Symfony, Angular, React, Next.js, and modern databases.',
+      cta: 'Discuss this project',
+      items: [
+        {
+          title: 'Enterprise Service Hub',
+          tech: 'Laravel | MySQL | Redis | REST APIs',
+          summary:
+            'Role-based internal platform for service requests, approvals, audit logs, and reporting across business teams.',
+          impact: 'What it shows: workflow automation, clean architecture, authentication, and admin operations.',
+        },
+        {
+          title: 'Research Portal API Suite',
+          tech: 'Symfony | PostgreSQL | Docker | OpenAPI',
+          summary:
+            'Modular API platform for data exchange, document processing, and external integrations with strict access control.',
+          impact: 'What it shows: API design, modular services, security, and scalable backend thinking.',
+        },
+        {
+          title: 'Operations Dashboard',
+          tech: 'Angular | Node.js | MySQL | RxJS',
+          summary:
+            'A fast internal dashboard for KPIs, approvals, forms, and operational status with a responsive interface.',
+          impact: 'What it shows: enterprise UI, forms, state handling, and data visualization.',
+        },
+        {
+          title: 'Client Portal Experience',
+          tech: 'Next.js | React | MongoDB | SSR',
+          summary:
+            'A multilingual public portal for marketing pages, secure account areas, and content-driven user experiences.',
+          impact: 'What it shows: SSR, SEO, multilingual UI, component architecture, and product thinking.',
+        },
+      ],
     },
     contact: {
       title: 'Contact',
@@ -163,6 +201,7 @@ const translations = {
       home: 'Startseite',
       about: 'Uber mich',
       skills: 'Fahigkeiten',
+      projects: 'Projekte',
       resume: 'Lebenslauf',
       contact: 'Kontakt',
       tagline: 'Lass uns gemeinsam etwas Legendäres bauen',
@@ -192,6 +231,43 @@ const translations = {
     skills: {
       title: 'Fahigkeiten',
       subtitle: 'Was ich kann',
+    },
+    projects: {
+      title: 'Projekte',
+      subtitle: 'Ausgewahlte Fallstudien',
+      intro:
+        'Portfolio-sichere Konzeptprojekte, die zeigen, wie ich reale Full-Stack-Probleme mit Laravel, Symfony, Angular, React, Next.js und modernen Datenbanken losen wurde.',
+      cta: 'Dieses Projekt besprechen',
+      items: [
+        {
+          title: 'Enterprise Service Hub',
+          tech: 'Laravel | MySQL | Redis | REST-APIs',
+          summary:
+            'Interne Plattform mit Rollenrechten, Genehmigungen, Audit-Logs und Reporting fur Fachbereiche.',
+          impact: 'Was es zeigt: Workflow-Automatisierung, saubere Architektur, Authentifizierung und Admin-Prozesse.',
+        },
+        {
+          title: 'Research Portal API Suite',
+          tech: 'Symfony | PostgreSQL | Docker | OpenAPI',
+          summary:
+            'Modulare API-Plattform fur Datenaustausch, Dokumentenverarbeitung und Integrationen mit strikter Zugriffskontrolle.',
+          impact: 'Was es zeigt: API-Design, modulare Services, Sicherheit und skalierbares Backend-Denken.',
+        },
+        {
+          title: 'Operations Dashboard',
+          tech: 'Angular | Node.js | MySQL | RxJS',
+          summary:
+            'Schnelles internes Dashboard fur KPIs, Genehmigungen, Formulare und Betriebszustand mit responsiver UI.',
+          impact: 'Was es zeigt: Enterprise-UI, Formulare, State-Handling und Datenvisualisierung.',
+        },
+        {
+          title: 'Client Portal Experience',
+          tech: 'Next.js | React | MongoDB | SSR',
+          summary:
+            'Mehrsprachiges Portal fur Marketing-Seiten, sichere Nutzerbereiche und inhaltsgetriebene Erlebnisse.',
+          impact: 'Was es zeigt: SSR, SEO, mehrsprachige UI, Komponentenarchitektur und Produktdenken.',
+        },
+      ],
     },
     contact: {
       title: 'Kontakt',
