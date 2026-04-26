@@ -4,8 +4,11 @@ import propertyImg from '../public/assets/projects/SpaceTravel.png';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import {motion} from "framer-motion";
 import Link from 'next/link';
+import { useLanguage } from '../context/LanguageContext';
 
-const property = () => {
+const Property = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
     initial={{
@@ -35,34 +38,29 @@ const property = () => {
 
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
-          <p>Project</p>
-          <h2>Overview</h2>
+          <p>{t('common.project')}</p>
+          <h2>{t('common.overview')}</h2>
           <p>
-          This appplication was built using ReactJS and is styled with
-            CSS. The application is hosted using Netlify.
-            This is a mobile responsive recreation of Space Travel.A
-            few features to note with this project are lazy loading images using
-            the Image component, react-routing.I also implement video background on it
-            using react. 
+          {t('projectPages.property.desc')}
           </p>
           <a
             href='https://github.com/Neel2603/react_space_travel.git'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+            <button className='px-8 py-2 mt-4 mr-8'>{t('common.code')}</button>
           </a>
           <a
             href='https://space-travel-2603.netlify.app/'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4'>Demo</button>
+            <button className='px-8 py-2 mt-4'>{t('common.demo')}</button>
           </a>
         </div>
         <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4'>
           <div className='p-2'>
-            <p className='text-center font-bold pb-2'>Technologies</p>
+            <p className='text-center font-bold pb-2'>{t('common.technologies')}</p>
             <div className='grid grid-cols-3 md:grid-cols-1'>
               <p className='text-gray-600 py-2 flex items-center'>
                 <RiRadioButtonFill className='pr-1' /> React
@@ -86,11 +84,11 @@ const property = () => {
           </div>
         </div>
         <Link href='/#projects'>
-          <p className='underline cursor-pointer'>Back</p>
+          <p className='underline cursor-pointer'>{t('common.back')}</p>
         </Link>
       </div>
     </motion.div>
   );
 };
 
-export default property;
+export default Property;

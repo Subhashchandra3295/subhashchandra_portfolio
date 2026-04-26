@@ -3,7 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AboutImg from '../public/assets/about.jpeg';
 import {motion} from "framer-motion"
+import { useLanguage } from '../context/LanguageContext';
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <div id='about' className='w-full md:h-screen p-2 flex items-center py-16'>
       <motion.div
@@ -19,20 +22,20 @@ const About = () => {
       className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'>
         <div className='col-span-2'>
           <p className='uppercase text-xl tracking-widest text-[#5651e5]'>
-            About
+            {t('about.title')}
           </p>
-          <h2 className='py-4'>Who I Am</h2>
+          <h2 className='py-4'>{t('about.subtitle')}</h2>
           <p className='py-2 text-gray-600'>
-          I am a Full Stack Developer with a creative mind, the ability to take initiative in work and manage time effectively. Exceptional management skills, team builder as well as a motivator with a proven record of success in this regard. 
+          {t('about.p1')}
          </p>
 
           <p className='py-2 text-gray-600'>
-          I am able to bring both strategic and tactical solutions together using technology. I am highly adaptable and thrive on opportunities that allow me to explore my passion for learning. This drive coupled with my extensive experience has led me to be a dynamic, creative problem solver always ready to learn and contribute.
+          {t('about.p2')}
           
           </p>
 
           <p className='py-2 text-gray-600'>
-          I do the work because I love it. I like the tech industry. I like the people I meet. I embrace the nerd and I love to make the web a better place. Hopefully, we will cross paths in the real world someday and we can make it a better place together.
+          {t('about.p3')}
           </p>
           
           {/* <Link href='/#projects'>

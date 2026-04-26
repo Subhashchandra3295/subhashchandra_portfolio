@@ -4,8 +4,11 @@ import cryptoImg from '../public/assets/projects/crypto.jpg';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Link from 'next/link';
 import {motion} from "framer-motion";
+import { useLanguage } from '../context/LanguageContext';
 
-const crypto = () => {
+const Crypto = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div 
     initial={{
@@ -35,38 +38,30 @@ const crypto = () => {
 
       <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 py-8'>
         <div className='col-span-4'>
-          <p>Project</p>
-          <h2>Overview</h2>
+          <p>{t('common.project')}</p>
+          <h2>{t('common.overview')}</h2>
           <p>
-            I built this app to demonstrate knowledge working in React JS and
-            accessing API endpoints. This app was built using React JS and is
-            hosted on Firebase. This application supports user authentication
-            using firebase. Users are able to create a new account using their
-            email address and can then sign in to save coins to a user specific
-            list. This is made possble by creating a firestore cloud storage
-            database at the time of user registration. Another feature of this
-            application is dynamic routing through the &quot;React Router DOM&quot;
-            package. This application was built using the Coin Gecko API.
+            {t('projectPages.crypto.desc')}
           </p>
           <a
             href='https://github.com/fireclint/crypto-react-firebase'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4 mr-8'>Code</button>
+            <button className='px-8 py-2 mt-4 mr-8'>{t('common.code')}</button>
           </a>
           <a
             href='https://cryptobase-yt.web.app/'
             target='_blank'
             rel='noreferrer'
           >
-            <button className='px-8 py-2 mt-4'>Demo</button>
+            <button className='px-8 py-2 mt-4'>{t('common.demo')}</button>
           </a>
 
         </div>
         <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl py-4'>
           <div className='p-2'>
-            <p className='text-center font-bold pb-2'>Technologies</p>
+            <p className='text-center font-bold pb-2'>{t('common.technologies')}</p>
             <div className='grid grid-cols-3 md:grid-cols-1 '>
               <p className='text-gray-600 py-2 flex items-center'>
                 <RiRadioButtonFill className='pr-1' /> React
@@ -90,11 +85,11 @@ const crypto = () => {
           </div>
         </div>
         <Link href='/#projects'>
-          <p className='underline cursor-pointer'>Back</p>
+          <p className='underline cursor-pointer'>{t('common.back')}</p>
         </Link>
       </div>
     </motion.div>
   );
 };
 
-export default crypto;
+export default Crypto;

@@ -19,7 +19,10 @@ import NextJS from '../public/assets/skills/nextjs.png'
 import NodeJS from '../public/assets/skills/node.png'
 import AWS from '../public/assets/skills/aws.png';
 import {motion} from "framer-motion";
+import { useLanguage } from '../context/LanguageContext';
 const Skills = () => {
+  const { t } = useLanguage();
+
   return (
     <div id='skills' className='w-full lg:h-screen p-2'>
       <motion.div 
@@ -34,9 +37,9 @@ const Skills = () => {
        transition ={{ duration : 1.5 }}
       className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
         <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
-          Skills
+          {t('skills.title')}
         </p>
-        <h2 className='py-4'>What I Can Do</h2>
+        <h2 className='py-4'>{t('skills.subtitle')}</h2>
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-8 z-0'>
           <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
             <div className='grid grid-cols-2 gap-4 justify-center items-center'>

@@ -7,8 +7,11 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import {Cursor, useTypewriter} from "react-simple-typewriter";
 import BgCircles from './BgCircles';
 import Spline from './Spline.jsx';
+import { useLanguage } from '../context/LanguageContext';
 // import Word from "./Word";
 const Main = () => {
+  const { t } = useLanguage();
+
   return (
     <div id='home' className='w-full h-screen text-center z-10'>
     
@@ -27,18 +30,17 @@ const Main = () => {
              
           {/* <BgCircles/> */}
           <p className='uppercase text-sm tracking-widest text-gray-600 animate-pulse'>
-            LET&#39;S BUILD SOMETHING TOGETHER
+            {t('main.build')}
           </p>
           <h1 
           
           className='py-4 text-gray-700'>
-            Hi, I&#39;m <span className='text-[#5651e5]'> Subhashchandra Borad</span>
+            {t('main.hi')} <span className='text-[#5651e5]'> Subhashchandra Borad</span>
           </h1>
-          <h1 className='py-2 text-gray-700'>A Full Stack Developer</h1>
+          <h1 className='py-2 text-gray-700'>{t('main.role')}</h1>
           <p className='py-4 text-gray-600 sm:max-w-[70%] m-auto'>
            <b>
-            I’m focused on building responsive front-end web applications
-            integrating back-end technologies.
+            {t('main.summary')}
             </b> 
           </p>
           <div className='flex items-center justify-between max-w-[330px] m-auto py-4 z-10'>
