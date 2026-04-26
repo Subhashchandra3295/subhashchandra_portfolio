@@ -84,33 +84,48 @@ const resume = () => {
           </div>
         </div>
         <div>
-          <p>
-            I am a Full Stack Developer with a creative mind, the ability to
-            take initiative in work and manage time effectively. Exceptional
-            management skills, team builder as well as a motivator with a proven
-            record of success in this regard.
+          <p className="text-lg font-semibold">
+            🚀 Full Stack Developer | 8+ Years | Laravel · Symfony · Angular · React · Node.js | Germany
           </p>
           <br />
 
           <p>
-            I am able to bring both strategic and tactical solutions together
-            using technology. I am highly adaptable and thrive on opportunities
-            that allow me to explore my passion for learning. This drive coupled
-            with my extensive experience has led me to be a dynamic, creative
-            problem solver always ready to learn and contribute.
+            I'm a Full Stack Software Developer with over 8 years of experience building scalable, high-performance web applications across enterprise, research, and industrial domains.
           </p>
           <br />
 
           <p>
-            I do the work because I love it. I like the tech industry. I like
-            the people I meet. I embrace the nerd and I love to make the web a
-            better place. Hopefully, we will cross paths in the real world
-            someday, and we can make it a better place together.
+            Currently working at the Leibniz Institute (IOER) in Dresden, where I develop Research Information Systems (RIS), document management platforms, and data-driven web tools using Laravel, Angular, React, and MySQL — all in compliance with GDPR.
+          </p>
+          <br />
+
+          <p>
+            Previously at Bosch Rexroth and LIWETEC GmbH, I built global platforms, RESTful APIs, and engineering tools serving hundreds of international users and partners.
+          </p>
+          <br />
+
+          <p className="font-bold text-lg">What I bring to the table:</p>
+          <ul className="list-disc list-outside px-7 py-2 leading-relaxed">
+            <li>🔧 Strong backend skills in Laravel/Symfony (PHP), Node.js, PostgreSQL, MySQL</li>
+            <li>🎨 Modern frontend with Angular, React, Vue.js, Next.js</li>
+            <li>☁️ Cloud & DevOps: AWS S3, Azure, Docker, CI/CD, GitLab</li>
+            <li>🔐 Security-focused: Authentication, RBAC, GDPR compliance</li>
+            <li>🤝 Agile team player with experience in cross-functional, distributed teams</li>
+          </ul>
+          <br />
+
+          <p>
+            I hold an M.Sc. in Automotive Software Engineering from TU Chemnitz and an MCA (Outstanding grade) from Pune University.
+          </p>
+          <br />
+
+          <p>
+            Open to exciting Full Stack or Backend-focused roles in Germany. Let's connect!
           </p>
           <br />
         </div>
 
-        {/* Skills */}
+        {/* Skills 
         <div className="text-center py-4">
           <h5 className="text-center underline text-[18px] py-2">Skills</h5>
           <p className="py-2">
@@ -140,7 +155,7 @@ const resume = () => {
             <span className="font-bold">Learning</span>
             <span className="px-2">|</span>Symphony
           </p>
-        </div>
+        </div>*/}
 
         <h5 className="text-center underline text-[18px] py-4">
           Professional Experience
@@ -262,7 +277,7 @@ const resume = () => {
           </p>
           <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
             <li>
-              • Integrated 20+ third-party APIs including Booking.com, Expedia, Airbnb, and Agoda
+              Integrated 20+ third-party APIs including Booking.com, Expedia, Airbnb, and Agoda
             </li>
             <li>
               Processed 10,000+ daily transactions ensuring high reliability and data consistency
