@@ -36,7 +36,7 @@ const Projects = () => {
               <div className='flex items-start justify-between gap-4'>
                 <div>
                   <p className='text-sm uppercase tracking-widest text-[#5651e5]'>
-                    Case Study
+                      {t('projects.caseStudy')}
                   </p>
                   <h3 className='text-2xl py-2'>{project.title}</h3>
                 </div>
@@ -50,8 +50,8 @@ const Projects = () => {
               <p className='text-sm text-gray-500 dark:text-slate-400 pb-6'>
                 {project.impact}
               </p>
-              <Link href='/#contact'>
-                <button className='px-6 py-3'>{t('projects.cta')}</button>
+              <Link href={`/projects/${project.slug}`}>
+                <button className='px-6 py-3'>{t('projects.viewCaseStudy')}</button>
               </Link>
             </div>
           ))}

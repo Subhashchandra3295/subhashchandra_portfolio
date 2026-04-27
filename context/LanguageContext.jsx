@@ -44,9 +44,12 @@ const translations = {
       subtitle: 'Selected Case Studies',
       intro:
         'Portfolio-safe concept projects that show how I approach real-world full stack problems with Laravel, Symfony, Angular, React, Next.js, and modern databases.',
+      caseStudy: 'Case Study',
       cta: 'Discuss this project',
+      viewCaseStudy: 'View Case Study',
       items: [
         {
+          slug: 'enterprise-service-hub',
           title: 'Enterprise Service Hub',
           tech: 'Laravel | MySQL | Redis | REST APIs',
           summary:
@@ -54,6 +57,7 @@ const translations = {
           impact: 'What it shows: workflow automation, clean architecture, authentication, and admin operations.',
         },
         {
+          slug: 'research-portal-api-suite',
           title: 'Research Portal API Suite',
           tech: 'Symfony | PostgreSQL | Docker | OpenAPI',
           summary:
@@ -61,6 +65,7 @@ const translations = {
           impact: 'What it shows: API design, modular services, security, and scalable backend thinking.',
         },
         {
+          slug: 'operations-dashboard',
           title: 'Operations Dashboard',
           tech: 'Angular | Node.js | MySQL | RxJS',
           summary:
@@ -68,6 +73,7 @@ const translations = {
           impact: 'What it shows: enterprise UI, forms, state handling, and data visualization.',
         },
         {
+          slug: 'client-portal-experience',
           title: 'Client Portal Experience',
           tech: 'Next.js | React | MongoDB | SSR',
           summary:
@@ -237,9 +243,12 @@ const translations = {
       subtitle: 'Ausgewahlte Fallstudien',
       intro:
         'Portfolio-sichere Konzeptprojekte, die zeigen, wie ich reale Full-Stack-Probleme mit Laravel, Symfony, Angular, React, Next.js und modernen Datenbanken losen wurde.',
+      caseStudy: 'Fallstudie',
       cta: 'Dieses Projekt besprechen',
+      viewCaseStudy: 'Fallstudie ansehen',
       items: [
         {
+          slug: 'enterprise-service-hub',
           title: 'Enterprise Service Hub',
           tech: 'Laravel | MySQL | Redis | REST-APIs',
           summary:
@@ -247,6 +256,7 @@ const translations = {
           impact: 'Was es zeigt: Workflow-Automatisierung, saubere Architektur, Authentifizierung und Admin-Prozesse.',
         },
         {
+          slug: 'research-portal-api-suite',
           title: 'Research Portal API Suite',
           tech: 'Symfony | PostgreSQL | Docker | OpenAPI',
           summary:
@@ -254,6 +264,7 @@ const translations = {
           impact: 'Was es zeigt: API-Design, modulare Services, Sicherheit und skalierbares Backend-Denken.',
         },
         {
+          slug: 'operations-dashboard',
           title: 'Operations Dashboard',
           tech: 'Angular | Node.js | MySQL | RxJS',
           summary:
@@ -261,6 +272,7 @@ const translations = {
           impact: 'Was es zeigt: Enterprise-UI, Formulare, State-Handling und Datenvisualisierung.',
         },
         {
+          slug: 'client-portal-experience',
           title: 'Client Portal Experience',
           tech: 'Next.js | React | MongoDB | SSR',
           summary:
