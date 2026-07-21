@@ -159,6 +159,9 @@ const Skills = () => {
     'OpenAPI/Swagger': '/assets/skills/swagger.svg',
     'GitLab CI/CD': '/assets/skills/gitlab.svg',
     'Docker': '/assets/skills/docker.svg',
+    'Docker Compose': '/assets/skills/docker.svg',
+    'Azure': '/assets/skills/azure.svg',
+    'CI/CD': '/assets/skills/gitlab.svg',
   };
 
   return (
@@ -184,7 +187,7 @@ const Skills = () => {
                       {icon ? (
                         <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                           <div className='m-auto'>
-                            <Image src={icon} width={64} height={64} alt={item.name} />
+                            <Image src={icon} width={48} height={48} alt={item.name} />
                           </div>
                           <div className='flex flex-col items-center justify-center'>
                             <h3>{item.name}</h3>
