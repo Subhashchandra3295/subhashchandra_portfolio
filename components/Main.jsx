@@ -8,12 +8,15 @@ import {Cursor, useTypewriter} from "react-simple-typewriter";
 import BgCircles from './BgCircles';
 import Spline from './Spline.jsx';
 import { useLanguage } from '../context/LanguageContext';
+
+// static strings moved to module scope to avoid hook dependency warnings
+const NAME_STR = "Hi, I'm Subhashchandra Borad";
+const ROLES = ['Full Stack Developer','PHP Developer','Frontend Developer'];
+
 // import Word from "./Word";
 const Main = () => {
   const { t } = useLanguage();
 
-  const nameStr = "Hi, I'm Subhashchandra Borad";
-  const roles = ['Full Stack Developer','PHP Developer','Frontend Developer'];
   const [nameDisp, setNameDisp] = React.useState('');
   const [roleDisp, setRoleDisp] = React.useState('');
 
