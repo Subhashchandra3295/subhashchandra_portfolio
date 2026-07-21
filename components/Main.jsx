@@ -26,10 +26,10 @@ const Main = () => {
     // type name once (avoid appending undefined by checking bounds)
     let ni = 0;
     const nameTimer = setInterval(() => {
-      if (ni < nameStr.length) {
-        setNameDisp((s) => s + nameStr[ni]);
+      if (ni < NAME_STR.length) {
+        setNameDisp((s) => s + NAME_STR[ni]);
         ni++;
-        if (ni === nameStr.length) {
+        if (ni === NAME_STR.length) {
           clearInterval(nameTimer);
           // start role loop after short delay
           timers.push(setTimeout(startRoleLoop, 300));
@@ -42,7 +42,7 @@ const Main = () => {
       let rIndex = 0;
 
       const loopNext = () => {
-        const role = roles[rIndex];
+        const role = ROLES[rIndex];
         // type
         let i = 0;
         const typeTimer = setInterval(() => {
@@ -58,7 +58,7 @@ const Main = () => {
                 setRoleDisp(role.slice(0, j));
                 if (j <= 0) {
                   clearInterval(delTimer);
-                  rIndex = (rIndex + 1) % roles.length;
+                  rIndex = (rIndex + 1) % ROLES.length;
                   timers.push(setTimeout(loopNext, 250));
                 }
               }, 35);
