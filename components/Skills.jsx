@@ -126,19 +126,33 @@ const Skills = () => {
     },
   ];
 
+  const iconsMap = {
+    'PHP': Php,
+    'Laravel': Laravel,
+    'CodeIgniter': Codeigniter,
+    'MySQL': Mysql,
+    'MongoDB': Mongodb,
+    'Angular': Angular,
+    'HTML5': Html,
+    'Tailwind CSS': Tailwind,
+    'React': ReactImg,
+    'TypeScript': Typescript,
+    'JavaScript': Javascript,
+    'REST': Restapi,
+    'Next.js': NextJS,
+    'Node.js': NodeJS,
+    'AWS': AWS,
+    'GitHub Actions': Github,
+    'Shopware 6': '/assets/skills/sb.png',
+  };
+
   return (
-    <div id='skills' className='w-full lg:h-screen p-2'>
+    <div id='skills' className='w-full p-2'>
       <motion.div 
-       initial={{
-        opacity: 0,   
-       }}
-       whileInView = {{
-         x : 0,
-         opacity : 1,
-         scale : 1,
-       }}
+       initial={{ opacity: 0 }}
+       whileInView = {{ x: 0, opacity: 1, scale: 1 }}
        transition ={{ duration : 1.5 }}
-      className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
+      className='max-w-[1240px] mx-auto flex flex-col justify-center'>
         <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
           {t('skills.title')}
         </p>
@@ -149,15 +163,19 @@ const Skills = () => {
               <h3 className='text-lg font-semibold mb-4'>{cat.title}</h3>
               <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
                 {cat.items.map((item) => (
-                  <div key={item.name} className='p-4 shadow-xl rounded-lg hover:scale-105 ease-in duration-200 flex items-center gap-4'>
-                    {item.icon ? (
-                      <div className='w-12 h-12 flex-shrink-0'>
-                        <Image src={item.icon} width={48} height={48} alt={item.name} />
+                  <div key={item.name} className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                    <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                      <div className='m-auto'>
+                        {(iconsMap[item.name] || item.icon) ? (
+                          <Image src={iconsMap[item.name] || item.icon} width={64} height={64} alt={item.name} />
+                        ) : (
+                          <div className='w-12 h-12 flex items-center justify-center bg-gray-100 rounded text-sm'>{item.name.split(' ')[0]}</div>
+                        )}
                       </div>
-                    ) : (
-                      <div className='w-12 h-12 flex items-center justify-center bg-gray-100 rounded text-xs'>{item.name.split(' ')[0]}</div>
-                    )}
-                    <div className='text-sm'>{item.name}</div>
+                      <div className='flex flex-col items-center justify-center'>
+                        <h3>{item.name}</h3>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
