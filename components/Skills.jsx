@@ -18,6 +18,7 @@ import Firebase from '../public/assets/skills/firebase.png';
 import NextJS from '../public/assets/skills/nextjs.png'
 import NodeJS from '../public/assets/skills/node.png'
 import AWS from '../public/assets/skills/aws.png';
+import Sb from '../public/assets/skills/sb.png';
 import {motion} from "framer-motion";
 import { useLanguage } from '../context/LanguageContext';
 const Skills = () => {
@@ -162,22 +163,27 @@ const Skills = () => {
             <div key={cat.title}>
               <h3 className='text-lg font-semibold mb-4'>{cat.title}</h3>
               <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
-                {cat.items.map((item) => (
-                  <div key={item.name} className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
-                    <div className='grid grid-cols-2 gap-4 justify-center items-center'>
-                      <div className='m-auto'>
-                        {(iconsMap[item.name] || item.icon) ? (
-                          <Image src={iconsMap[item.name] || item.icon} width={64} height={64} alt={item.name} />
-                        ) : (
-                          <div className='w-12 h-12 flex items-center justify-center bg-gray-100 rounded text-sm'>{item.name.split(' ')[0]}</div>
-                        )}
-                      </div>
-                      <div className='flex flex-col items-center justify-center'>
-                        <h3>{item.name}</h3>
-                      </div>
+                {cat.items.map((item) => {
+                  const icon = iconsMap[item.name] || item.icon;
+                  return (
+                    <div key={item.name} className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                      {icon ? (
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                          <div className='m-auto'>
+                            <Image src={icon} width={64} height={64} alt={item.name} />
+                          </div>
+                          <div className='flex flex-col items-center justify-center'>
+                            <h3>{item.name}</h3>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className='flex items-center justify-center h-20'>
+                          <h3>{item.name}</h3>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}
