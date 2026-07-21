@@ -10,7 +10,7 @@ import Spline from './Spline.jsx';
 import { useLanguage } from '../context/LanguageContext';
 
 // static strings moved to module scope to avoid hook dependency warnings
-const NAME_STR = "Hi, I'm Subhashchandra Borad";
+const TYPE_NAME = 'Subhashchandra Borad';
 const ROLES = ['Full Stack Developer','PHP Developer','Frontend Developer'];
 
 // import Word from "./Word";
@@ -23,13 +23,13 @@ const Main = () => {
   React.useEffect(() => {
     const timers = [];
 
-    // type name once (avoid appending undefined by checking bounds)
+    // type only the last name part (avoid issues with translation and repeated text)
     let ni = 0;
     const nameTimer = setInterval(() => {
-      if (ni < NAME_STR.length) {
-        setNameDisp((s) => s + NAME_STR[ni]);
+      if (ni < TYPE_NAME.length) {
+        setNameDisp((s) => s + TYPE_NAME[ni]);
         ni++;
-        if (ni === NAME_STR.length) {
+        if (ni === TYPE_NAME.length) {
           clearInterval(nameTimer);
           // start role loop after short delay
           timers.push(setTimeout(startRoleLoop, 300));
@@ -99,7 +99,7 @@ const Main = () => {
             {t('main.build')}
           </p>
           <h1 className='py-4 text-gray-700 text-4xl font-bold'>
-            {nameDisp}<span className='text-[#5651e5]'> </span><span className='animate-pulse'>|</span>
+            {t('main.hi')} <span className='text-[#5651e5]'> {nameDisp}</span><span className='animate-pulse'>|</span>
           </h1>
           <div className='mt-2'>
             <h1 className='py-2 text-gray-700 text-2xl font-semibold'>{roleDisp}<span className='animate-pulse'>|</span></h1>
