@@ -20,15 +20,17 @@ const Main = () => {
   React.useEffect(() => {
     const timers = [];
 
-    // type name once
+    // type name once (avoid appending undefined by checking bounds)
     let ni = 0;
     const nameTimer = setInterval(() => {
-      setNameDisp((s) => s + nameStr[ni]);
-      ni++;
-      if (ni >= nameStr.length) {
-        clearInterval(nameTimer);
-        // start role loop after short delay
-        timers.push(setTimeout(startRoleLoop, 300));
+      if (ni < nameStr.length) {
+        setNameDisp((s) => s + nameStr[ni]);
+        ni++;
+        if (ni === nameStr.length) {
+          clearInterval(nameTimer);
+          // start role loop after short delay
+          timers.push(setTimeout(startRoleLoop, 300));
+        }
       }
     }, 35);
     timers.push(nameTimer);
