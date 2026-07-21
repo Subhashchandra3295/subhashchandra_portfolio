@@ -15,42 +15,62 @@ const Main = () => {
   const nameStr = "Hi, I'm Subhashchandra Borad";
   const roles = ['Full Stack Developer','PHP Developer','Frontend Developer'];
   const [nameDisp, setNameDisp] = React.useState('');
-  const [rolesDisp, setRolesDisp] = React.useState([]);
-  const [curr, setCurr] = React.useState('');
+  const [roleDisp, setRoleDisp] = React.useState('');
 
   React.useEffect(() => {
-    let i = 0;
-    const nameInterval = setInterval(() => {
-      setNameDisp((s) => s + nameStr[i]);
-      i++;
-      if (i >= nameStr.length) {
-        clearInterval(nameInterval);
-        setTimeout(startRoles, 300);
+    const timers = [];
+
+    // type name once
+    let ni = 0;
+    const nameTimer = setInterval(() => {
+      setNameDisp((s) => s + nameStr[ni]);
+      ni++;
+      if (ni >= nameStr.length) {
+        clearInterval(nameTimer);
+        // start role loop after short delay
+        timers.push(setTimeout(startRoleLoop, 300));
       }
     }, 35);
+    timers.push(nameTimer);
 
-    function startRoles() {
-      let r = 0;
-      const typeRole = () => {
-        if (r >= roles.length) return;
-        const role = roles[r];
-        let j = 0;
-        const ri = setInterval(() => {
-          setCurr(role.slice(0, j + 1));
-          j++;
-          if (j >= role.length) {
-            clearInterval(ri);
-            setRolesDisp((a) => [...a, role]);
-            setCurr('');
-            r++;
-            setTimeout(typeRole, 400);
+    function startRoleLoop() {
+      let rIndex = 0;
+
+      const loopNext = () => {
+        const role = roles[rIndex];
+        // type
+        let i = 0;
+        const typeTimer = setInterval(() => {
+          setRoleDisp(role.slice(0, i + 1));
+          i++;
+          if (i >= role.length) {
+            clearInterval(typeTimer);
+            // pause then delete
+            timers.push(setTimeout(() => {
+              let j = role.length;
+              const delTimer = setInterval(() => {
+                j--;
+                setRoleDisp(role.slice(0, j));
+                if (j <= 0) {
+                  clearInterval(delTimer);
+                  rIndex = (rIndex + 1) % roles.length;
+                  timers.push(setTimeout(loopNext, 250));
+                }
+              }, 35);
+              timers.push(delTimer);
+            }, 1000));
           }
         }, 35);
+        timers.push(typeTimer);
       };
-      typeRole();
+
+      loopNext();
     }
 
-    return () => clearInterval(nameInterval);
+    return () => {
+      // cleanup all timers
+      timers.forEach((t) => clearInterval(t) || clearTimeout(t));
+    };
   }, []);
 
   return (
@@ -77,10 +97,7 @@ const Main = () => {
             {nameDisp}<span className='text-[#5651e5]'> </span><span className='animate-pulse'>|</span>
           </h1>
           <div className='mt-2'>
-            {rolesDisp.map((r, idx) => (
-              <h1 key={idx} className='py-2 text-gray-700 text-2xl font-semibold'>{r}</h1>
-            ))}
-            {curr && <h1 className='py-2 text-gray-700 text-2xl font-semibold'>{curr}<span className='animate-pulse'>|</span></h1>}
+            <h1 className='py-2 text-gray-700 text-2xl font-semibold'>{roleDisp}<span className='animate-pulse'>|</span></h1>
           </div>
           <p className='py-4 text-gray-600 sm:max-w-[70%] m-auto'>
            <b>
