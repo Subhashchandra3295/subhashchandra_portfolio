@@ -190,12 +190,12 @@ const Skills = () => {
                             <Image src={icon} width={48} height={48} alt={item.name} />
                           </div>
                           <div className='flex flex-col items-center justify-center'>
-                            <h3>{item.name}</h3>
+                            <h3 className='text-sm text-center whitespace-normal break-words'>{item.name}</h3>
                           </div>
                         </div>
                       ) : (
                         <div className='flex items-center justify-center h-20'>
-                          <h3>{item.name}</h3>
+                          <h3 className='text-sm text-center whitespace-normal break-words'>{item.name}</h3>
                         </div>
                       )}
                     </div>
