@@ -99,7 +99,7 @@ const Main = () => {
             {t('main.build')}
           </p>
           <h1 className='py-4 text-gray-700 text-4xl font-bold'>
-            {t('main.hi')} <span className='text-[#5651e5]'> {nameDisp}</span><span className='animate-pulse'>|</span>
+            {(t('main.hi') || "Hi, I'm").trim()} <span className='text-[#5651e5]'>{nameDisp ?? TYPE_NAME}</span><span className='animate-pulse'>|</span>
           </h1>
           <div className='mt-2'>
             <h1 className='py-2 text-gray-700 text-2xl font-semibold'>{roleDisp}<span className='animate-pulse'>|</span></h1>
