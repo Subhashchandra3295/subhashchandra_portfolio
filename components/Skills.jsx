@@ -145,6 +145,20 @@ const Skills = () => {
     'AWS': AWS,
     'GitHub Actions': Github,
     'Shopware 6': '/assets/skills/sb.png',
+    'Symfony': '/assets/skills/symfony.svg',
+    'Python': '/assets/skills/python.svg',
+    'PostgreSQL': '/assets/skills/postgresql.svg',
+    'MariaDB': '/assets/skills/mariadb.svg',
+    'Redis': '/assets/skills/redis.svg',
+    'Material UI': '/assets/skills/material-ui.svg',
+    'Bootstrap': '/assets/skills/bootstrap.svg',
+    'Magento': '/assets/skills/magento.svg',
+    'WordPress': '/assets/skills/wordpress.svg',
+    'GraphQL': '/assets/skills/graphql.svg',
+    'Vue.js': '/assets/skills/vue.svg',
+    'OpenAPI/Swagger': '/assets/skills/swagger.svg',
+    'GitLab CI/CD': '/assets/skills/gitlab.svg',
+    'Docker': '/assets/skills/docker.svg',
   };
 
   return (
