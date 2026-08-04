@@ -15,7 +15,6 @@ export default function Home() {
       <Head>
         <title>Subhashchandra | Full Stack Developer</title>
         <meta name="description" content={t('home.metaDescription')} />
-        <link rel="icon" href="/SB.png" />
       </Head>
     <Main />
     <About />

@@ -2,7 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 
 const LANGUAGE_STORAGE_KEY = 'language';
 
-const translations = {
+export const translations = {
   en: {
     navbar: {
       home: 'Home',
@@ -26,14 +26,14 @@ const translations = {
       hi: "Hi, I'm",
       role: 'A Full Stack Developer',
       summary:
-        'I am focused on building responsive front-end web applications integrating back-end technologies.',
+        'I build full stack web applications — responsive front-ends paired with reliable, scalable back-end systems.',
     },
     about: {
       title: 'About',
       subtitle: 'Who I Am',
-      p1: 'I am a Full Stack Developer with a creative mindset, strong initiative, and effective time management skills. I am a team builder and motivator with a proven track record of delivery.',
-      p2: 'I combine strategic and tactical thinking to solve problems with technology. I am highly adaptable and thrive in roles where I can keep learning and improving.',
-      p3: 'I build because I love it. I enjoy the tech community and creating useful web experiences. Hopefully our paths cross in person and we build something meaningful together.',
+      p1: "I'm a Full Stack Developer with 8+ years of experience building web applications across Laravel, Symfony, Angular, React, and Next.js. I care about clean architecture, dependable delivery, and code that's easy for the next person to work with.",
+      p2: "I like thinking both strategically and hands-on — understanding the bigger picture of a product while still being comfortable in the weeds of implementation. I'm adaptable by nature and enjoy picking up new tools and technologies as projects demand.",
+      p3: "I build because I genuinely enjoy it. I like being part of the tech community and creating web experiences that are actually useful. I'm open to full-time, freelance, and part-time work — always happy to talk about what you're building.",
     },
     skills: {
       title: 'Skills',
@@ -41,13 +41,73 @@ const translations = {
     },
     projects: {
       title: 'Projects',
-      subtitle: 'Selected Case Studies',
+      subtitle: "What I've Built",
       intro:
-        'Portfolio-safe concept projects that show how I approach real-world full stack problems with Laravel, Symfony, Angular, React, Next.js, and modern databases.',
+        'A mix of fully working demo apps and portfolio-safe case studies that show how I approach real-world full stack problems with Laravel, Symfony, Angular, React, Next.js, and modern databases.',
       caseStudy: 'Case Study',
+      demoProject: 'Demo Project',
+      demoProjectsHeading: 'Demo Projects',
+      caseStudiesHeading: 'Case Studies',
       cta: 'Discuss this project',
       viewCaseStudy: 'View Case Study',
+      viewOnGithub: 'View on GitHub',
+      viewProject: 'View Project',
       items: [
+        {
+          slug: 'budget-buddy',
+          title: 'Budget Buddy',
+          tech: 'React | Vite | Recharts',
+          summary:
+            'A personal expense tracker with category and monthly spending charts, built to explore client-side state management and data visualization.',
+          impact: 'What it shows: component architecture, charting, and state management without a backend.',
+          github: 'https://github.com/Subhashchandra3295/budget-buddy',
+          icon: '/assets/skills/react.png',
+          screenshot: '/assets/projects/budget-buddy.png',
+        },
+        {
+          slug: 'recipe-box',
+          title: 'Recipe Box',
+          tech: 'Vue 3 | Vue Router | Pinia',
+          summary:
+            'A recipe manager with search, tag filtering, and an ingredient checklist, built to explore the Composition API and Pinia state management.',
+          impact: 'What it shows: Vue Router, centralized state with Pinia, and localStorage persistence.',
+          github: 'https://github.com/Subhashchandra3295/recipe-box',
+          icon: '/assets/skills/vue.svg',
+          screenshot: '/assets/projects/recipe-box.png',
+        },
+        {
+          slug: 'linkstash',
+          title: 'LinkStash',
+          tech: 'Next.js | Prisma | SQLite',
+          summary:
+            'A bookmark manager with real REST API routes and server-side rendering, built to explore the Next.js App Router as both frontend and backend.',
+          impact: 'What it shows: API route handlers, Prisma ORM, and server-rendered data fetching.',
+          github: 'https://github.com/Subhashchandra3295/linkstash',
+          icon: '/assets/skills/nextjs.png',
+          screenshot: '/assets/projects/linkstash.png',
+        },
+        {
+          slug: 'taskboard',
+          title: 'Taskboard',
+          tech: 'Laravel | Livewire | SQLite',
+          summary:
+            'A Kanban-style task board with boards, lists, and tasks, built to explore Eloquent relationships and reactive UI with Livewire.',
+          impact: 'What it shows: MVC structure, Eloquent migrations/relationships, and server-driven reactivity.',
+          github: 'https://github.com/Subhashchandra3295/taskboard',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/taskboard.png',
+        },
+        {
+          slug: 'shopcart',
+          title: 'ShopCart',
+          tech: 'Laravel | Stripe | SQLite',
+          summary:
+            'A small e-commerce storefront with a product catalog, session-based cart, and Stripe Checkout Sessions in test mode, built to explore payment integration and order management.',
+          impact: 'What it shows: Stripe payment integration, Eloquent order/inventory modeling, auth-gated checkout, and an admin CRUD area.',
+          github: 'https://github.com/Subhashchandra3295/shopcart',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/shopcart.png',
+        },
         {
           slug: 'enterprise-service-hub',
           title: 'Enterprise Service Hub',
@@ -86,7 +146,7 @@ const translations = {
       title: 'Contact',
       subtitle: 'Get In Touch',
       role: 'Full Stack Developer',
-      availability: 'I am available for freelance or part-time positions. Contact me and let us talk.',
+      availability: "I am open to full-time, freelance, and part-time opportunities. Get in touch and let's talk.",
       connect: 'Connect With Me',
       name: 'Name',
       phone: 'Phone Number',
@@ -100,22 +160,6 @@ const translations = {
       overview: 'Overview',
       technologies: 'Technologies',
       code: 'Code',
-      demo: 'Demo',
-      back: 'Back',
-    },
-    projectPages: {
-      crypto: {
-        desc: 'I built this app to demonstrate React skills and API integration. It supports authentication with Firebase and allows users to create accounts, sign in, and save coins to personal lists using Firestore. It also uses dynamic routing and data from the CoinGecko API.',
-      },
-      netflix: {
-        desc: 'I built this React app and hosted it on GitHub Pages. It includes Firebase authentication and Firestore, pulls movie data from an IMDB API, and uses app-wide state management with the useContext hook.',
-      },
-      property: {
-        desc: 'This application was built with React and styled with CSS. It is hosted on Netlify and recreates a mobile responsive Space Travel experience with lazy-loaded images and routing.',
-      },
-      twitch: {
-        desc: 'This application was built with React and styled with CSS. It recreates a mobile responsive Twitch-inspired experience and demonstrates routing and modern UI composition.',
-      },
     },
     resume: {
       title: 'Resume',
@@ -124,17 +168,18 @@ const translations = {
       introHeadline:
         'Full Stack Developer | 8+ Years | Laravel · Symfony · Angular · React · Node.js | Germany',
       introParagraphs: [
-        'I am a Full Stack Software Developer with over 8 years of experience building scalable, high-performance web applications across enterprise, research, and industrial domains.',
-        'Currently working at the Leibniz Institute (IOER) in Dresden, where I develop Research Information Systems (RIS), document management platforms, and data-driven web tools using Laravel, Angular, React, and MySQL with GDPR compliance.',
-        'Previously at Bosch Rexroth and LIWETEC GmbH, I built global platforms, RESTful APIs, and engineering tools serving hundreds of international users and partners.',
+        'I am a Full Stack & Backend Developer with over 8 years of experience designing, developing, and delivering scalable web applications, enterprise platforms, and data-driven systems across research, industrial, and enterprise domains.',
+        'Currently, I work at the Leibniz Institute for Ecological Urban and Regional Development (IOER) in Dresden, where I develop and maintain Research Information Systems (RIS), document management platforms, and web-based applications — covering backend development, frontend implementation, API integrations, database optimization, and GDPR-compliant software quality.',
+        'Throughout my career, I have contributed to projects for renowned organisations including Bosch Rexroth and LIWETEC GmbH, gaining experience across the complete software development lifecycle — from requirements analysis and architecture design to development, testing, and deployment.',
       ],
-      tableTitle: 'What I bring to the table:',
+      tableTitle: 'Technical Expertise',
       strengths: [
-        'Strong backend skills in Laravel/Symfony (PHP), Node.js, PostgreSQL, MySQL',
-        'Modern frontend with Angular, React, Vue.js, Next.js',
-        'Cloud and DevOps: AWS S3, Azure, Docker, CI/CD, GitLab',
-        'Security-focused: Authentication, RBAC, GDPR compliance',
-        'Agile team player with experience in cross-functional, distributed teams',
+        { category: 'Backend Development', items: ['PHP', 'Laravel', 'Symfony', 'Node.js', 'REST APIs', 'Authentication & RBAC'] },
+        { category: 'Frontend Development', items: ['Angular', 'React', 'Vue.js', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5'] },
+        { category: 'Databases', items: ['MySQL', 'PostgreSQL', 'MariaDB', 'MongoDB'] },
+        { category: 'Cloud & DevOps', items: ['Docker', 'GitLab CI/CD', 'AWS S3', 'Azure DevOps'] },
+        { category: 'Engineering Practices', items: ['Clean Code & SOLID Principles', 'Agile/Scrum', 'Performance Optimization', 'GDPR Compliance'] },
+        { category: 'C# / .NET', items: ['C#', 'ASP.NET MVC', 'Entity Framework Core', 'Blazor', 'Unity3D'] },
       ],
       education:
         'I hold an M.Sc. in Automotive Software Engineering from TU Chemnitz and an MCA (Outstanding grade) from Pune University.',
@@ -194,6 +239,28 @@ const translations = {
             'Reduced feature delivery time by 25% by refactoring legacy systems using MVC architecture',
           ],
         },
+        {
+          company: 'TechLeaper Systems Pvt. Ltd.',
+          location: 'Pune, India.',
+          role: 'Intern - Unity Game Developer (C#) (Jan-2016 - June-2016)',
+          points: [
+            "Applied object-oriented design principles and C# scripting in Unity3D to build gameplay systems, mechanics, and state management for the mobile game 'Nuts Run', launched to the App Store over a 6-month internship.",
+          ],
+        },
+      ],
+      projectsTitle: 'Projects',
+      projects: [
+        {
+          title: 'Online Event Reminder System (ASP.NET MVC, C#)',
+          program: "Master's Program Project",
+          university: 'Savitribai Phule Pune University',
+          points: [
+            'Developed a full-featured ASP.NET MVC application in C#, using Razor views as the templating layer, enabling users to create and manage event reminders (birthdays, anniversaries, custom events) with multi-channel notification delivery (email, SMS, push).',
+            'Implemented the data access layer with Entity Framework Core, mapping domain entities to a normalised SQL Server database with optimised queries and indexing to support concurrent user requests.',
+            'Built a background notification engine using Hangfire for scheduled job processing, ensuring reliable, timely reminder delivery across all notification channels.',
+            'Applied MVC separation of concerns and the Repository Pattern to decouple controllers, business logic, and data access, mirroring enterprise-level .NET architecture practices.',
+          ],
+        },
       ],
       extrasTitle: 'Extra-curricular Activities and Achievements',
       extras: [
@@ -225,14 +292,14 @@ const translations = {
       hi: 'Hallo, ich bin',
       role: 'Ein Full Stack Entwickler',
       summary:
-        'Ich konzentriere mich auf responsive Frontend-Webanwendungen mit nahtloser Backend-Integration.',
+        'Ich baue Full-Stack-Webanwendungen - responsive Frontends kombiniert mit zuverlassigen, skalierbaren Backend-Systemen.',
     },
     about: {
       title: 'Uber mich',
       subtitle: 'Wer ich bin',
-      p1: 'Ich bin Full Stack Entwickler mit kreativem Denken, Eigeninitiative und sehr gutem Zeitmanagement. Als Teamplayer und Motivator liefere ich nachweislich starke Ergebnisse.',
-      p2: 'Ich verbinde strategisches und taktisches Denken, um Probleme mit Technologie zu losen. Ich bin sehr anpassungsfahig und lerne kontinuierlich dazu.',
-      p3: 'Ich entwickle, weil ich es liebe. Ich schatze die Tech-Community und baue gerne nutzliche Web-Erlebnisse. Vielleicht kreuzen sich unsere Wege und wir bauen gemeinsam etwas Sinnvolles.',
+      p1: 'Ich bin Full Stack Entwickler mit uber 8 Jahren Erfahrung in der Entwicklung von Webanwendungen mit Laravel, Symfony, Angular, React und Next.js. Mir sind saubere Architektur, verlassliche Lieferung und gut nachvollziehbarer Code wichtig.',
+      p2: 'Ich denke gerne sowohl strategisch als auch hands-on - ich behalte das grosse Ganze eines Produkts im Blick und arbeite genauso gerne an der konkreten Umsetzung. Ich bin sehr anpassungsfahig und lerne gerne neue Werkzeuge und Technologien, wenn es ein Projekt erfordert.',
+      p3: 'Ich entwickle, weil ich es wirklich gerne tue. Ich schatze die Tech-Community und baue gerne nutzliche Web-Erlebnisse. Ich bin offen fur Festanstellung, Freelance- und Teilzeitmoglichkeiten - sprich mich gerne an, wenn du etwas baust.',
     },
     skills: {
       title: 'Fahigkeiten',
@@ -240,13 +307,73 @@ const translations = {
     },
     projects: {
       title: 'Projekte',
-      subtitle: 'Ausgewahlte Fallstudien',
+      subtitle: 'Was ich gebaut habe',
       intro:
-        'Portfolio-sichere Konzeptprojekte, die zeigen, wie ich reale Full-Stack-Probleme mit Laravel, Symfony, Angular, React, Next.js und modernen Datenbanken losen wurde.',
+        'Eine Mischung aus voll funktionsfahigen Demo-Apps und portfolio-sicheren Fallstudien, die zeigen, wie ich reale Full-Stack-Probleme mit Laravel, Symfony, Angular, React, Next.js und modernen Datenbanken lose.',
       caseStudy: 'Fallstudie',
+      demoProject: 'Demo-Projekt',
+      demoProjectsHeading: 'Demo-Projekte',
+      caseStudiesHeading: 'Fallstudien',
       cta: 'Dieses Projekt besprechen',
       viewCaseStudy: 'Fallstudie ansehen',
+      viewOnGithub: 'Auf GitHub ansehen',
+      viewProject: 'Projekt ansehen',
       items: [
+        {
+          slug: 'budget-buddy',
+          title: 'Budget Buddy',
+          tech: 'React | Vite | Recharts',
+          summary:
+            'Ein personlicher Ausgaben-Tracker mit Kategorie- und Monatsdiagrammen, entwickelt zur Vertiefung von Client-State-Management und Datenvisualisierung.',
+          impact: 'Was es zeigt: Komponentenarchitektur, Diagramme und State-Management ohne Backend.',
+          github: 'https://github.com/Subhashchandra3295/budget-buddy',
+          icon: '/assets/skills/react.png',
+          screenshot: '/assets/projects/budget-buddy.png',
+        },
+        {
+          slug: 'recipe-box',
+          title: 'Recipe Box',
+          tech: 'Vue 3 | Vue Router | Pinia',
+          summary:
+            'Ein Rezeptmanager mit Suche, Tag-Filterung und Zutaten-Checkliste, entwickelt zur Vertiefung der Composition API und des Pinia State-Managements.',
+          impact: 'Was es zeigt: Vue Router, zentrales State-Management mit Pinia und localStorage-Persistenz.',
+          github: 'https://github.com/Subhashchandra3295/recipe-box',
+          icon: '/assets/skills/vue.svg',
+          screenshot: '/assets/projects/recipe-box.png',
+        },
+        {
+          slug: 'linkstash',
+          title: 'LinkStash',
+          tech: 'Next.js | Prisma | SQLite',
+          summary:
+            'Ein Lesezeichen-Manager mit echten REST-API-Routen und serverseitigem Rendering, entwickelt zur Vertiefung des Next.js App Routers als Frontend und Backend.',
+          impact: 'Was es zeigt: API-Route-Handler, Prisma ORM und serverseitiges Daten-Fetching.',
+          github: 'https://github.com/Subhashchandra3295/linkstash',
+          icon: '/assets/skills/nextjs.png',
+          screenshot: '/assets/projects/linkstash.png',
+        },
+        {
+          slug: 'taskboard',
+          title: 'Taskboard',
+          tech: 'Laravel | Livewire | SQLite',
+          summary:
+            'Ein Kanban-Aufgabenboard mit Boards, Listen und Aufgaben, entwickelt zur Vertiefung von Eloquent-Beziehungen und reaktiver UI mit Livewire.',
+          impact: 'Was es zeigt: MVC-Struktur, Eloquent-Migrationen/-Beziehungen und serverseitige Reaktivitat.',
+          github: 'https://github.com/Subhashchandra3295/taskboard',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/taskboard.png',
+        },
+        {
+          slug: 'shopcart',
+          title: 'ShopCart',
+          tech: 'Laravel | Stripe | SQLite',
+          summary:
+            'Ein kleiner Onlineshop mit Produktkatalog, sitzungsbasiertem Warenkorb und Stripe Checkout Sessions im Testmodus, entwickelt zur Vertiefung von Zahlungsintegration und Bestellverwaltung.',
+          impact: 'Was es zeigt: Stripe-Zahlungsintegration, Eloquent-Bestell-/Bestandsmodellierung, Auth-gesicherter Checkout und ein Admin-CRUD-Bereich.',
+          github: 'https://github.com/Subhashchandra3295/shopcart',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/shopcart.png',
+        },
         {
           slug: 'enterprise-service-hub',
           title: 'Enterprise Service Hub',
@@ -286,7 +413,7 @@ const translations = {
       subtitle: 'Nimm Kontakt auf',
       role: 'Full Stack Entwickler',
       availability:
-        'Ich bin fur Freelance- oder Teilzeitpositionen verfugbar. Schreib mir und lass uns sprechen.',
+        'Ich bin offen fur Festanstellung, Freelance- und Teilzeitmoglichkeiten. Schreib mir und lass uns sprechen.',
       connect: 'Verbinde dich mit mir',
       name: 'Name',
       phone: 'Telefonnummer',
@@ -300,22 +427,6 @@ const translations = {
       overview: 'Uberblick',
       technologies: 'Technologien',
       code: 'Code',
-      demo: 'Demo',
-      back: 'Zuruck',
-    },
-    projectPages: {
-      crypto: {
-        desc: 'Diese App zeigt meine React- und API-Integrationskenntnisse. Sie unterstutzt Firebase-Authentifizierung, Benutzerkonten, Login und personliche Coin-Listen mit Firestore. AuBerdem nutzt sie dynamisches Routing und Daten von der CoinGecko API.',
-      },
-      netflix: {
-        desc: 'Diese React-App wurde auf GitHub Pages bereitgestellt. Sie nutzt Firebase-Authentifizierung und Firestore, ruft Filmdaten uber eine IMDB-API ab und verwendet useContext fur globales State-Management.',
-      },
-      property: {
-        desc: 'Diese Anwendung wurde mit React entwickelt und mit CSS gestaltet. Sie ist auf Netlify gehostet und recreiert eine mobil-optimierte Space-Travel-Erfahrung mit Lazy Loading und Routing.',
-      },
-      twitch: {
-        desc: 'Diese Anwendung wurde mit React entwickelt und mit CSS gestaltet. Sie recreiert eine mobil-optimierte, von Twitch inspirierte Erfahrung und demonstriert Routing und moderne UI-Komposition.',
-      },
     },
     resume: {
       title: 'Lebenslauf',
@@ -324,17 +435,18 @@ const translations = {
       introHeadline:
         'Full Stack Entwickler | 8+ Jahre | Laravel · Symfony · Angular · React · Node.js | Deutschland',
       introParagraphs: [
-        'Ich bin Full Stack Softwareentwickler mit uber 8 Jahren Erfahrung im Aufbau skalierbarer, performanter Webanwendungen in Unternehmens-, Forschungs- und Industriebereichen.',
-        'Derzeit arbeite ich am Leibniz-Institut (IOER) in Dresden und entwickle Forschungsinformationssysteme, Dokumentenplattformen und datengetriebene Web-Tools mit Laravel, Angular, React und MySQL unter GDPR-Compliance.',
-        'Zuvor habe ich bei Bosch Rexroth und LIWETEC globale Plattformen, REST-APIs und Engineering-Tools fur internationale Nutzer und Partner entwickelt.',
+        'Ich bin Full-Stack- & Backend-Entwickler mit uber 8 Jahren Erfahrung in der Konzeption, Entwicklung und Bereitstellung skalierbarer Webanwendungen, Unternehmensplattformen und datengetriebener Systeme in Forschungs-, Industrie- und Unternehmensbereichen.',
+        'Derzeit arbeite ich am Leibniz-Institut fur okologische Raumentwicklung (IOER) in Dresden, wo ich Forschungsinformationssysteme (RIS), Dokumentenmanagement-Plattformen und webbasierte Anwendungen entwickle und pflege — von Backend- und Frontend-Entwicklung uber API-Integrationen bis hin zu Datenbankoptimierung und GDPR-konformer Softwarequalitat.',
+        'Im Laufe meiner Laufbahn habe ich an Projekten fur renommierte Unternehmen wie Bosch Rexroth und LIWETEC GmbH mitgewirkt und dabei Erfahrung im gesamten Softwareentwicklungszyklus gesammelt — von der Anforderungsanalyse und Architektur bis hin zu Entwicklung, Testing und Deployment.',
       ],
-      tableTitle: 'Was ich mitbringe:',
+      tableTitle: 'Technische Kompetenzen',
       strengths: [
-        'Starke Backend-Skills in Laravel/Symfony (PHP), Node.js, PostgreSQL, MySQL',
-        'Modernes Frontend mit Angular, React, Vue.js, Next.js',
-        'Cloud und DevOps: AWS S3, Azure, Docker, CI/CD, GitLab',
-        'Sicherheitsfokus: Authentifizierung, RBAC, GDPR-Compliance',
-        'Agiler Teamplayer mit Erfahrung in verteilten, interdisziplinaren Teams',
+        { category: 'Backend-Entwicklung', items: ['PHP', 'Laravel', 'Symfony', 'Node.js', 'REST-APIs', 'Authentifizierung & RBAC'] },
+        { category: 'Frontend-Entwicklung', items: ['Angular', 'React', 'Vue.js', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5'] },
+        { category: 'Datenbanken', items: ['MySQL', 'PostgreSQL', 'MariaDB', 'MongoDB'] },
+        { category: 'Cloud & DevOps', items: ['Docker', 'GitLab CI/CD', 'AWS S3', 'Azure DevOps'] },
+        { category: 'Engineering-Praktiken', items: ['Clean Code & SOLID-Prinzipien', 'Agile/Scrum', 'Performance-Optimierung', 'GDPR-Compliance'] },
+        { category: 'C# / .NET', items: ['C#', 'ASP.NET MVC', 'Entity Framework Core', 'Blazor', 'Unity3D'] },
       ],
       education:
         'Ich habe einen M.Sc. in Automotive Software Engineering von der TU Chemnitz sowie einen MCA (Outstanding Grade) von der Pune University.',
@@ -395,6 +507,28 @@ const translations = {
             'Feature-Lieferzeit um 25% durch Refactoring von Legacy-Systemen mit MVC reduziert',
           ],
         },
+        {
+          company: 'TechLeaper Systems Pvt. Ltd.',
+          location: 'Pune, Indien.',
+          role: 'Praktikant - Unity Game Developer (C#) (Jan-2016 - Juni-2016)',
+          points: [
+            "Objektorientierte Design-Prinzipien und C#-Scripting in Unity3D angewendet, um Gameplay-Systeme, Mechaniken und State-Management fur das Mobile-Game 'Nuts Run' zu entwickeln, das nach einem 6-monatigen Praktikum im App Store veroffentlicht wurde.",
+          ],
+        },
+      ],
+      projectsTitle: 'Projekte',
+      projects: [
+        {
+          title: 'Online Event Reminder System (ASP.NET MVC, C#)',
+          program: 'Masterarbeit-Projekt',
+          university: 'Savitribai Phule Pune University',
+          points: [
+            'Eine vollstandige ASP.NET-MVC-Anwendung in C# mit Razor-Views als Templating-Schicht entwickelt, mit der Nutzer Erinnerungen (Geburtstage, Jahrestage, individuelle Ereignisse) mit Benachrichtigungen uber mehrere Kanale (E-Mail, SMS, Push) erstellen und verwalten konnen.',
+            'Die Datenzugriffsschicht mit Entity Framework Core implementiert, Domanen-Entitaten auf eine normalisierte SQL-Server-Datenbank mit optimierten Abfragen und Indizierung fur nebenlaufige Anfragen abgebildet.',
+            'Eine Hintergrund-Benachrichtigungs-Engine mit Hangfire fur geplante Jobs aufgebaut, um zuverlassige, punktliche Erinnerungen uber alle Kanale sicherzustellen.',
+            'MVC-Trennung der Zustandigkeiten und das Repository-Pattern angewendet, um Controller, Geschaftslogik und Datenzugriff zu entkoppeln, entsprechend der Praxis in Enterprise-.NET-Architekturen.',
+          ],
+        },
       ],
       extrasTitle: 'Aktivitaten und Erfolge',
       extras: [
@@ -411,7 +545,7 @@ const LanguageContext = createContext({
   t: () => '',
 });
 
-const getByPath = (source, path) => {
+export const getByPath = (source, path) => {
   return path.split('.').reduce((acc, key) => (acc && key in acc ? acc[key] : undefined), source);
 };
 

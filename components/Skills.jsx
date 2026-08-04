@@ -171,19 +171,19 @@ const Skills = () => {
        whileInView = {{ x: 0, opacity: 1, scale: 1 }}
        transition ={{ duration : 1.5 }}
       className='max-w-[1240px] mx-auto flex flex-col justify-center'>
-        <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
+        <p className='text-xl tracking-widest uppercase text-accent'>
           {t('skills.title')}
         </p>
-        <h2 className='py-4'>{t('skills.subtitle')}</h2>
+        <h2 className='py-4 text-text-primary-light dark:text-text-primary'>{t('skills.subtitle')}</h2>
         <div className='space-y-8'>
           {categories.map((cat) => (
             <div key={cat.title}>
-              <h3 className='text-lg font-semibold mb-4'>{cat.title}</h3>
+              <h3 className='text-lg font-semibold mb-4 text-text-primary-light dark:text-text-primary'>{cat.title}</h3>
               <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
                 {cat.items.map((item) => {
                   const icon = iconsMap[item.name] || item.icon;
                   return (
-                    <div key={item.name} className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300 min-h-[120px] overflow-hidden'>
+                    <div key={item.name} className='p-6 shadow-xl shadow-gray-400 dark:shadow-black/40 rounded-xl hover:scale-105 hover:shadow-glow-sm ease-in duration-300 min-h-[120px] overflow-hidden bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'>
                       {icon ? (
                         <div className='flex flex-col items-center justify-center gap-3'>
                           <div className='m-auto'>

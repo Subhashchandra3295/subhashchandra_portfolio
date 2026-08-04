@@ -14,11 +14,11 @@ html {
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide transition-colors duration-300
+    @apply bg-bg-base-light text-text-primary-light tracking-wide transition-colors duration-300
   }
 
   .dark body {
-    @apply bg-slate-900 text-slate-100
+    @apply bg-bg-base text-text-primary
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -38,7 +38,7 @@ html {
   }
 
   button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
+    @apply shadow-xl shadow-gray-400 dark:shadow-black/40 rounded-xl uppercase bg-accent-gradient text-white hover:shadow-glow-sm transition-shadow duration-300
   }
 
   cursor {

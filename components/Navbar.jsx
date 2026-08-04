@@ -1,55 +1,17 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill, BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
-// import { useRouter } from 'next/router';
-import NavLogo from '../public/SB.png'
+import Logo from './Logo';
 import {motion} from "framer-motion";
 import { useLanguage } from '../context/LanguageContext';
-
-const THEME_COLORS = {
-  light: {
-    navBg: '#ecf0f3',
-    linkColor: '#1f2937',
-    drawerBg: '#ecf0f3',
-    border: '#d1d5db',
-    accent: '#5651e5',
-    shadowColor: 'shadow-gray-400',
-  },
-  dark: {
-    navBg: '#0f172a',
-    linkColor: '#e2e8f0',
-    drawerBg: '#111827',
-    border: '#374151',
-    accent: '#60a5fa',
-    shadowColor: 'shadow-black/40',
-  },
-};
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [theme, setTheme] = useState('light');
   const { toggleLanguage, t } = useLanguage();
-  // const [position, setPosition] = useState('fixed')
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   if (
-  //     router.asPath === '/property' ||
-  //     router.asPath === '/crypto' ||
-  //     router.asPath === '/netflix' ||
-  //     router.asPath === '/twitch'
-  //   ) {
-  //     setNavBg('transparent');
-  //     setLinkColor('#ecf0f3');
-  //   } else {
-  //     setNavBg('#ecf0f3');
-  //     setLinkColor('#1f2937');
-  //   }
-  // }, [router]);
 
   const handleNav = () => {
     setNav(!nav);
@@ -87,24 +49,21 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleShadow);
   }, []);
 
-  const colors = THEME_COLORS[theme];
-
   return (
     <div
-      style={{ backgroundColor: `${colors.navBg}` }}
       className={
-        shadow
-          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
-          : 'fixed w-full h-20 z-[100]'
+        (shadow
+          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300 '
+          : 'fixed w-full h-20 z-[100] ') + 'bg-bg-base-light dark:bg-bg-surface transition-colors duration-300'
       }
     >
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <Link href='/'>
-          <motion.div 
+          <motion.div
           initial={{
             x : -500,
             opacity : 0,
-            scale : 0.5 
+            scale : 0.5
           }}
           animate={{
             x : 0,
@@ -114,13 +73,7 @@ const Navbar = () => {
           transition={{
             duration : 1.5,
           }} >
-            <Image
-              src={NavLogo}
-              alt='/'
-              width='125'
-              height='50'
-              className='cursor-pointer'
-            />
+            <Logo size={40} className='cursor-pointer' />
           </motion.div>
         </Link>
         <motion.div  initial={{
@@ -135,7 +88,7 @@ const Navbar = () => {
         }}
         transition ={{ duration : 1.5 }}>
           <div className='hidden md:flex items-center'>
-          <ul style={{ color: `${colors.linkColor}` }} className='hidden md:flex'>
+          <ul className='hidden md:flex text-text-primary-light dark:text-text-primary'>
             <li className='ml-10 text-sm uppercase hover:border-b'>
               <Link href='/'>{t('navbar.home')}</Link>
             </li>
@@ -179,9 +132,8 @@ const Navbar = () => {
           </div>
           {/* Hamburger Icon */}
           <div
-            style={{ color: `${colors.linkColor}` }}
             onClick={handleNav}
-            className='md:hidden'
+            className='md:hidden text-text-primary-light dark:text-text-primary'
           >
             <AiOutlineMenu size={25} />
           </div>
@@ -198,32 +150,25 @@ const Navbar = () => {
         {/* Side Drawer Menu */}
         <div
           className={
-            nav
+            (nav
               ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen p-10 ease-in duration-500'
-              : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
+              : 'fixed left-[-100%] top-0 p-10 ease-in duration-500') +
+            ' bg-bg-base-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary transition-colors duration-300'
           }
-          style={{ backgroundColor: colors.drawerBg, color: colors.linkColor }}
         >
           <div>
             <div className='flex w-full items-center justify-between'>
               <Link href='/'>
-                {/* <a> */}
-                  <Image
-                    src={NavLogo}
-                    width='87'
-                    height='35'
-                    alt='/'
-                  />
-                {/* </a> */}
+                <Logo size={32} />
               </Link>
               <div
                 onClick={handleNav}
-                className={`rounded-full shadow-lg p-3 cursor-pointer ${colors.shadowColor}`}
+                className='rounded-full shadow-lg p-3 cursor-pointer shadow-gray-400 dark:shadow-black/40'
               >
                 <AiOutlineClose />
               </div>
             </div>
-            <div className='border-b my-4' style={{ borderColor: colors.border }}>
+            <div className='border-b my-4 border-border-subtle-light dark:border-border-subtle'>
               <p className='w-[85%] md:w-[90%] py-4'>
                 {t('navbar.tagline')}
               </p>
@@ -282,7 +227,7 @@ const Navbar = () => {
               </Link>
             </ul>
             <div className='pt-40'>
-              <p className='uppercase tracking-widest' style={{ color: colors.accent }}>
+              <p className='uppercase tracking-widest text-accent'>
                 {t('navbar.connect')}
               </p>
               <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
@@ -291,7 +236,7 @@ const Navbar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <div className={`rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 ${colors.shadowColor}`}>
+                  <div className={'rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 hover:shadow-glow-sm ease-in duration-300 shadow-gray-400 dark:shadow-black/40'}>
                     <FaLinkedinIn />
                   </div>
                 </a>
@@ -300,14 +245,14 @@ const Navbar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <div className={`rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 ${colors.shadowColor}`}>
+                  <div className={'rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 hover:shadow-glow-sm ease-in duration-300 shadow-gray-400 dark:shadow-black/40'}>
                     <FaGithub />
                   </div>
                 </a>
                 <Link href='/#contact'>
                   <div
                     onClick={() => setNav(!nav)}
-                    className={`rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 ${colors.shadowColor}`}
+                    className={'rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 hover:shadow-glow-sm ease-in duration-300 shadow-gray-400 dark:shadow-black/40'}
                   >
                     <AiOutlineMail />
                   </div>
@@ -315,7 +260,7 @@ const Navbar = () => {
                 <Link href='/resume'>
                   <div
                     onClick={() => setNav(!nav)}
-                    className={`rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 ease-in duration-300 ${colors.shadowColor}`}
+                    className={'rounded-full shadow-lg p-3 cursor-pointer hover:scale-105 hover:shadow-glow-sm ease-in duration-300 shadow-gray-400 dark:shadow-black/40'}
                   >
                     <BsFillPersonLinesFill />
                   </div>

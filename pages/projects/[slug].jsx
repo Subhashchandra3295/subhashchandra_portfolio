@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -161,14 +162,18 @@ const ProjectDetailPage = () => {
   const { language, t } = useLanguage();
   const slug = Array.isArray(router.query.slug) ? router.query.slug[0] : router.query.slug;
 
-  const project = CASE_STUDIES[language]?.[slug] || CASE_STUDIES.en[slug];
+  const caseStudy = CASE_STUDIES[language]?.[slug] || CASE_STUDIES.en[slug];
+  const demoProjects = t('projects.items') || [];
+  const demoProject = demoProjects.find((item) => item.slug === slug && item.screenshot);
+  const project = caseStudy || demoProject;
+  const isDemoProject = !caseStudy && !!demoProject;
 
   if (router.isReady && !project) {
     return (
-      <div className='min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white'>
+      <div className='min-h-screen bg-bg-base-light text-text-primary-light dark:bg-bg-base dark:text-text-primary'>
         <div className='mx-auto flex min-h-screen max-w-[960px] items-center px-4'>
-          <div className='rounded-3xl border border-gray-200 bg-white p-8 shadow-2xl dark:border-slate-800 dark:bg-slate-900'>
-            <p className='text-sm uppercase tracking-[0.3em] text-[#5651e5]'>404</p>
+          <div className='rounded-3xl border border-gray-200 bg-bg-surface-light p-8 shadow-2xl dark:border-border-subtle dark:bg-bg-surface'>
+            <p className='text-sm uppercase tracking-[0.3em] text-accent'>404</p>
             <h1 className='py-4 text-3xl font-bold'>Project not found</h1>
             <p className='text-gray-600 dark:text-slate-300'>The requested case study does not exist.</p>
             <div className='mt-6 flex gap-4'>
@@ -189,6 +194,77 @@ const ProjectDetailPage = () => {
     return null;
   }
 
+  if (isDemoProject) {
+    const technologies = demoProject.tech.split(' | ');
+
+    return (
+      <>
+        <Head>
+          <title>{project.title} | Portfolio</title>
+          <meta
+            name='description'
+            content={project.summary}
+          />
+        </Head>
+        <div className='min-h-screen bg-bg-base-light text-text-primary-light dark:bg-bg-base dark:text-text-primary'>
+          <motion.main
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className='mx-auto max-w-[1100px] px-4 pb-16 pt-28 sm:pt-32 lg:pt-36'
+          >
+            <div className='mb-8 flex items-center justify-between gap-4'>
+              <Link href='/#projects'>
+                <button className='px-5 py-3'>← {t('navbar.projects')}</button>
+              </Link>
+              <Link href='/#contact'>
+                <button className='px-5 py-3'>{t('projects.cta')}</button>
+              </Link>
+            </div>
+
+            <section className='overflow-hidden rounded-[2rem] border border-gray-200 bg-bg-surface-light shadow-2xl dark:border-border-subtle dark:bg-bg-surface'>
+              <div className='relative w-full aspect-[8/5]'>
+                <Image
+                  src={demoProject.screenshot}
+                  alt={`${project.title} screenshot`}
+                  fill
+                  sizes='100vw'
+                  className='object-cover'
+                />
+              </div>
+            </section>
+
+            <section className='mt-8 grid gap-6 lg:grid-cols-3'>
+              <div className='rounded-3xl border border-gray-200 bg-bg-surface-light p-6 shadow-xl dark:border-border-subtle dark:bg-bg-surface lg:col-span-2 md:p-8'>
+                <p className='text-sm uppercase tracking-[0.3em] text-accent'>{t('common.project')}</p>
+                <h1 className='py-4 text-4xl font-bold md:text-5xl'>{project.title}</h1>
+                <p className='text-sm uppercase tracking-[0.3em] text-accent'>{t('common.overview')}</p>
+                <p className='mt-4 text-lg leading-8 text-gray-700 dark:text-slate-300'>{project.summary}</p>
+                <p className='mt-4 leading-7 text-gray-600 dark:text-slate-300'>{project.impact}</p>
+                {project.github && (
+                  <a href={project.github} target='_blank' rel='noreferrer' className='mt-8 inline-block'>
+                    <button className='px-6 py-3'>{t('common.code')}</button>
+                  </a>
+                )}
+              </div>
+              <div className='rounded-3xl border border-gray-200 bg-bg-surface-light p-6 shadow-xl dark:border-border-subtle dark:bg-bg-surface'>
+                <p className='text-sm uppercase tracking-[0.3em] text-accent'>{t('common.technologies')}</p>
+                <ul className='mt-5 space-y-4 text-gray-700 dark:text-slate-300'>
+                  {technologies.map((item) => (
+                    <li key={item} className='flex gap-3 leading-7'>
+                      <span className='mt-2 h-2.5 w-2.5 rounded-full bg-accent' />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          </motion.main>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -198,7 +274,7 @@ const ProjectDetailPage = () => {
           content={project.summary}
         />
       </Head>
-      <div className='min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 dark:text-white'>
+      <div className='min-h-screen bg-bg-base-light text-text-primary-light dark:bg-bg-base dark:text-text-primary'>
         <motion.main
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -214,10 +290,10 @@ const ProjectDetailPage = () => {
             </Link>
           </div>
 
-          <section className='overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-slate-900'>
+          <section className='overflow-hidden rounded-[2rem] border border-gray-200 bg-bg-surface-light shadow-2xl dark:border-border-subtle dark:bg-bg-surface'>
             <div className='grid gap-0 lg:grid-cols-[1.2fr_0.8fr]'>
               <div className='p-8 md:p-12'>
-                <p className='text-sm uppercase tracking-[0.35em] text-[#5651e5]'>
+                <p className='text-sm uppercase tracking-[0.35em] text-accent'>
                   {project.category}
                 </p>
                 <h1 className='py-4 text-4xl font-bold md:text-5xl'>{project.title}</h1>
@@ -244,18 +320,18 @@ const ProjectDetailPage = () => {
           </section>
 
           <section className='mt-8 grid gap-6 lg:grid-cols-3'>
-            <div className='rounded-3xl border border-gray-200 bg-white p-6 shadow-xl dark:border-slate-800 dark:bg-slate-900 lg:col-span-2'>
-              <p className='text-sm uppercase tracking-[0.3em] text-[#5651e5]'>Challenge</p>
+            <div className='rounded-3xl border border-gray-200 bg-bg-surface-light p-6 shadow-xl dark:border-border-subtle dark:bg-bg-surface lg:col-span-2'>
+              <p className='text-sm uppercase tracking-[0.3em] text-accent'>Challenge</p>
               <p className='mt-4 text-lg leading-8 text-gray-700 dark:text-slate-300'>{project.challenge}</p>
-              <p className='mt-8 text-sm uppercase tracking-[0.3em] text-[#5651e5]'>Solution</p>
+              <p className='mt-8 text-sm uppercase tracking-[0.3em] text-accent'>Solution</p>
               <p className='mt-4 text-lg leading-8 text-gray-700 dark:text-slate-300'>{project.solution}</p>
             </div>
-            <div className='rounded-3xl border border-gray-200 bg-white p-6 shadow-xl dark:border-slate-800 dark:bg-slate-900'>
-              <p className='text-sm uppercase tracking-[0.3em] text-[#5651e5]'>Highlights</p>
+            <div className='rounded-3xl border border-gray-200 bg-bg-surface-light p-6 shadow-xl dark:border-border-subtle dark:bg-bg-surface'>
+              <p className='text-sm uppercase tracking-[0.3em] text-accent'>Highlights</p>
               <ul className='mt-5 space-y-4 text-gray-700 dark:text-slate-300'>
                 {project.highlights.map((item) => (
                   <li key={item} className='flex gap-3 leading-7'>
-                    <span className='mt-2 h-2.5 w-2.5 rounded-full bg-[#5651e5]' />
+                    <span className='mt-2 h-2.5 w-2.5 rounded-full bg-accent' />
                     <span>{item}</span>
                   </li>
                 ))}

@@ -17,66 +17,13 @@ const ROLES = ['Full Stack Developer','PHP Developer','Frontend Developer'];
 const Main = () => {
   const { t } = useLanguage();
 
-  const [nameDisp, setNameDisp] = React.useState('');
-  const [roleDisp, setRoleDisp] = React.useState('');
-
-  React.useEffect(() => {
-    const timers = [];
-
-    // type only the last name part (avoid issues with translation and repeated text)
-    let ni = 0;
-    const nameTimer = setInterval(() => {
-      if (ni < TYPE_NAME.length) {
-        setNameDisp((s) => s + TYPE_NAME[ni]);
-        ni++;
-        if (ni === TYPE_NAME.length) {
-          clearInterval(nameTimer);
-          // start role loop after short delay
-          timers.push(setTimeout(startRoleLoop, 300));
-        }
-      }
-    }, 35);
-    timers.push(nameTimer);
-
-    function startRoleLoop() {
-      let rIndex = 0;
-
-      const loopNext = () => {
-        const role = ROLES[rIndex];
-        // type
-        let i = 0;
-        const typeTimer = setInterval(() => {
-          setRoleDisp(role.slice(0, i + 1));
-          i++;
-          if (i >= role.length) {
-            clearInterval(typeTimer);
-            // pause then delete
-            timers.push(setTimeout(() => {
-              let j = role.length;
-              const delTimer = setInterval(() => {
-                j--;
-                setRoleDisp(role.slice(0, j));
-                if (j <= 0) {
-                  clearInterval(delTimer);
-                  rIndex = (rIndex + 1) % ROLES.length;
-                  timers.push(setTimeout(loopNext, 250));
-                }
-              }, 35);
-              timers.push(delTimer);
-            }, 1000));
-          }
-        }, 35);
-        timers.push(typeTimer);
-      };
-
-      loopNext();
-    }
-
-    return () => {
-      // cleanup all timers
-      timers.forEach((t) => clearInterval(t) || clearTimeout(t));
-    };
-  }, []);
+  const [roleDisp] = useTypewriter({
+    words: ROLES,
+    loop: true,
+    typeSpeed: 35,
+    deleteSpeed: 35,
+    delaySpeed: 1000,
+  });
 
   return (
     <div id='home' className='w-full h-screen text-center z-10'>
@@ -95,19 +42,19 @@ const Main = () => {
           transition ={{ duration : 1.5 }} className="absolute">
              
           {/* <BgCircles/> */}
-          <p className='uppercase text-sm tracking-widest text-gray-600 animate-pulse'>
+          <p className='uppercase text-sm tracking-widest text-text-muted-light dark:text-text-muted animate-pulse'>
             {t('main.build')}
           </p>
-          <h1 className='py-4 text-gray-700 text-4xl font-bold'>
-            {(t('main.hi') || "Hi, I'm").trim()} <span className='text-[#5651e5]'>{nameDisp ?? TYPE_NAME}</span><span className='animate-pulse'>|</span>
+          <h1 className='py-4 text-text-primary-light dark:text-text-primary text-4xl font-bold'>
+            {(t('main.hi') || "Hi, I'm").trim()} <span className='bg-accent-gradient bg-clip-text text-transparent'>{TYPE_NAME}</span>
           </h1>
           <div className='mt-2'>
-            <h1 className='py-2 text-gray-700 text-2xl font-semibold'>{roleDisp}<span className='animate-pulse'>|</span></h1>
+            <h1 className='py-2 text-text-primary-light dark:text-text-primary text-2xl font-semibold'>{roleDisp}<Cursor cursorStyle='|' /></h1>
           </div>
-          <p className='py-4 text-gray-600 sm:max-w-[70%] m-auto'>
+          <p className='py-4 text-text-muted-light dark:text-text-muted sm:max-w-[70%] m-auto'>
            <b>
             {t('main.summary')}
-            </b> 
+            </b>
           </p>
           <div className='flex items-center justify-between max-w-[330px] m-auto py-4 z-10'>
             <a
@@ -115,7 +62,7 @@ const Main = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                 <FaLinkedinIn />
               </div>
             </a>
@@ -124,17 +71,17 @@ const Main = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                 <FaGithub />
               </div>
             </a>
             <Link href='/#contact'>
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                 <AiOutlineMail />
               </div>
             </Link>
             <Link href='/resume'>
-              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                 <BsFillPersonLinesFill />
               </div>
             </Link>

@@ -40,13 +40,13 @@ const Contact = () => {
   return (
     <div id='contact' className='w-full lg:h-screen'>
       <div className='max-w-[1240px] m-auto px-2 py-16 w-full '>
-        <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
+        <p className='text-xl tracking-widest uppercase text-accent'>
           {t('contact.title')}
         </p>
-        <h2 className='py-4'>{t('contact.subtitle')}</h2>
+        <h2 className='py-4 text-text-primary-light dark:text-text-primary'>{t('contact.subtitle')}</h2>
         <div className='grid lg:grid-cols-5 gap-8'>
           {/* left */}
-          <div className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4'>
+          <div className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 dark:shadow-black/40 rounded-xl p-4 bg-bg-surface-light dark:bg-bg-surface'>
             <div className='lg:p-4 h-full '>
               <div>
                 <Image
@@ -55,22 +55,22 @@ const Contact = () => {
                   alt='/'
                 />
               </div>
-              <div>
+              <div className='text-text-primary-light dark:text-text-primary'>
                 <h2 className='py-2'>Subhashchandra Borad</h2>
                 <p>{t('contact.role')}</p>
-                <p className='py-4'>
+                <p className='py-4 text-text-muted-light dark:text-text-muted'>
                   {t('contact.availability')}
                 </p>
               </div>
               <div>
-                <p className='uppercase pt-8'>{t('contact.connect')}</p>
+                <p className='uppercase pt-8 text-text-primary-light dark:text-text-primary'>{t('contact.connect')}</p>
                 <div className='flex items-center justify-between py-4'>
                   <a
                     href='https://www.linkedin.com/in/subhashchandra-borad/'
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+                    <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                       <FaLinkedinIn />
                     </div>
                   </a>
@@ -79,17 +79,17 @@ const Contact = () => {
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+                    <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                       <FaGithub />
                     </div>
                   </a>
 
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+                  <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                     <AiOutlineMail />
                   </div>
                   <Link href='/resume'>
                     {/* <a> */}
-                      <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+                      <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                         <BsFillPersonLinesFill />
                       </div>
                     {/* </a> */}
@@ -100,7 +100,7 @@ const Contact = () => {
           </div>
 
           {/* right */}
-          <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'>
+          <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 dark:shadow-black/40 rounded-xl lg:p-4 bg-bg-surface-light dark:bg-bg-surface'>
             <div className='p-4'>
               <form
                 action='https://getform.io/f/c2f0712e-494b-4913-ac1b-0d0101b09f8e'
@@ -109,44 +109,44 @@ const Contact = () => {
               >
                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                   <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>{t('contact.name')}</label>
+                    <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.name')}</label>
                     <input
-                      className='border-2 rounded-lg p-3 flex border-gray-300'
+                      className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
                       type='text'
                       name='name'
                     />
                   </div>
                   <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>
+                    <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>
                       {t('contact.phone')}
                     </label>
                     <input
-                      className='border-2 rounded-lg p-3 flex border-gray-300'
+                      className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
                       type='text'
                       name='phone'
                     />
                   </div>
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>{t('contact.email')}</label>
+                  <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.email')}</label>
                   <input
-                    className='border-2 rounded-lg p-3 flex border-gray-300'
+                    className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
                     type='email'
                     name='email'
                   />
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>{t('contact.subject')}</label>
+                  <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.subject')}</label>
                   <input
-                    className='border-2 rounded-lg p-3 flex border-gray-300'
+                    className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
                     type='text'
                     name='subject'
                   />
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>{t('contact.message')}</label>
+                  <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.message')}</label>
                   <textarea
-                    className='border-2 rounded-lg p-3 border-gray-300'
+                    className='border-2 rounded-lg p-3 border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
                     rows='10'
                     name='message'
                   ></textarea>
@@ -161,9 +161,9 @@ const Contact = () => {
         <div className='flex justify-center py-12'>
           <Link href='/'>
             {/* <a> */}
-              <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
+              <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-4 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
                 <HiOutlineChevronDoubleUp
-                  className='text-[#5651e5]'
+                  className='text-accent'
                   size={30}
                 />
               </div>
