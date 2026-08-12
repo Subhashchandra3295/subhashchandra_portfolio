@@ -68,6 +68,19 @@ export const translations = {
           screenshot: '/assets/projects/saas-pm-platform.png',
         },
         {
+          slug: 'ecommerce-platform',
+          title: 'ShopCraft',
+          tech: 'Laravel | Next.js | PostgreSQL | Redis | Stripe',
+          summary:
+            'A full e-commerce platform with a Laravel API and a Next.js storefront — product catalog, cart, and a real Stripe Checkout flow backed by a signed webhook and a queued order-processing job.',
+          impact:
+            'What it shows: a real Stripe Checkout Session with webhook signature verification, cart-to-order snapshotting inside a DB transaction, Redis-queued stock decrement, a server-rendered admin panel, and a typed Next.js frontend consuming a token-authenticated API.',
+          github: 'https://github.com/Subhashchandra3295/ecommerce-platform',
+          demo: 'https://ecommerce-platform-snowy-two.vercel.app',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/ecommerce-platform.png',
+        },
+        {
           slug: 'budget-buddy',
           title: 'Budget Buddy',
           tech: 'React | Vite | Recharts',
@@ -346,6 +359,19 @@ export const translations = {
           demo: 'https://saas-pm-platform.vercel.app',
           icon: '/assets/skills/nextjs.png',
           screenshot: '/assets/projects/saas-pm-platform.png',
+        },
+        {
+          slug: 'ecommerce-platform',
+          title: 'ShopCraft',
+          tech: 'Laravel | Next.js | PostgreSQL | Redis | Stripe',
+          summary:
+            'Eine vollstandige E-Commerce-Plattform mit Laravel-API und Next.js-Storefront — Produktkatalog, Warenkorb und ein echter Stripe-Checkout-Flow mit signiertem Webhook und einem queue-basierten Bestellverarbeitungs-Job.',
+          impact:
+            'Was es zeigt: eine echte Stripe-Checkout-Session mit Webhook-Signaturprufung, Warenkorb-zu-Bestellung-Snapshotting in einer DB-Transaktion, Redis-Queue-basierte Lagerbestandsreduzierung, ein serverseitig gerendertes Admin-Panel und ein typisiertes Next.js-Frontend, das eine token-authentifizierte API konsumiert.',
+          github: 'https://github.com/Subhashchandra3295/ecommerce-platform',
+          demo: 'https://ecommerce-platform-snowy-two.vercel.app',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/ecommerce-platform.png',
         },
         {
           slug: 'budget-buddy',
