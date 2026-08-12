@@ -54,6 +54,18 @@ export const translations = {
       viewProject: 'View Project',
       items: [
         {
+          slug: 'saas-pm-platform',
+          title: 'SaaS PM Platform',
+          tech: 'Next.js | NestJS | PostgreSQL | Redis | BullMQ',
+          summary:
+            'A multi-tenant project management platform — organizations, projects, and tasks — with tenant-scoped JWT auth, Redis-cached reads, and BullMQ background jobs for notifications.',
+          impact:
+            'What it shows: production-style architecture — multi-tenancy enforced at the query layer, cache-aside reads, background job processing, Docker Compose, and CI with real Postgres/Redis service containers.',
+          github: 'https://github.com/Subhashchandra3295/saas-pm-platform',
+          icon: '/assets/skills/nextjs.png',
+          screenshot: '/assets/projects/saas-pm-platform.png',
+        },
+        {
           slug: 'budget-buddy',
           title: 'Budget Buddy',
           tech: 'React | Vite | Recharts',
@@ -319,6 +331,18 @@ export const translations = {
       viewOnGithub: 'Auf GitHub ansehen',
       viewProject: 'Projekt ansehen',
       items: [
+        {
+          slug: 'saas-pm-platform',
+          title: 'SaaS PM Platform',
+          tech: 'Next.js | NestJS | PostgreSQL | Redis | BullMQ',
+          summary:
+            'Eine Multi-Tenant-Projektmanagement-Plattform — Organisationen, Projekte und Aufgaben — mit mandantenfahiger JWT-Authentifizierung, Redis-Caching und BullMQ-Hintergrundjobs fur Benachrichtigungen.',
+          impact:
+            'Was es zeigt: produktionsnahe Architektur — Multi-Tenancy auf Datenbankebene, Cache-Aside-Lesezugriffe, Hintergrundverarbeitung, Docker Compose und CI mit echten Postgres-/Redis-Service-Containern.',
+          github: 'https://github.com/Subhashchandra3295/saas-pm-platform',
+          icon: '/assets/skills/nextjs.png',
+          screenshot: '/assets/projects/saas-pm-platform.png',
+        },
         {
           slug: 'budget-buddy',
           title: 'Budget Buddy',
