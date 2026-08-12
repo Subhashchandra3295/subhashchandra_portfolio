@@ -49,11 +49,18 @@ const Projects = () => {
         <p className='text-sm text-gray-500 dark:text-slate-400 pb-6'>
           {project.impact}
         </p>
-        <Link href={`/projects/${project.slug}`}>
-          <button className='px-6 py-3'>
-            {project.github ? t('projects.viewProject') : t('projects.viewCaseStudy')}
-          </button>
-        </Link>
+        <div className='flex flex-wrap gap-3'>
+          <Link href={`/projects/${project.slug}`}>
+            <button className='px-6 py-3'>
+              {project.github ? t('projects.viewProject') : t('projects.viewCaseStudy')}
+            </button>
+          </Link>
+          {project.demo && (
+            <a href={project.demo} target='_blank' rel='noreferrer'>
+              <button className='px-6 py-3'>{t('projects.viewLiveDemo')}</button>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

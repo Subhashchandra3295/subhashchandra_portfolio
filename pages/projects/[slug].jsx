@@ -241,11 +241,18 @@ const ProjectDetailPage = () => {
                 <p className='text-sm uppercase tracking-[0.3em] text-accent'>{t('common.overview')}</p>
                 <p className='mt-4 text-lg leading-8 text-gray-700 dark:text-slate-300'>{project.summary}</p>
                 <p className='mt-4 leading-7 text-gray-600 dark:text-slate-300'>{project.impact}</p>
-                {project.github && (
-                  <a href={project.github} target='_blank' rel='noreferrer' className='mt-8 inline-block'>
-                    <button className='px-6 py-3'>{t('common.code')}</button>
-                  </a>
-                )}
+                <div className='mt-8 flex flex-wrap gap-4'>
+                  {demoProject.demo && (
+                    <a href={demoProject.demo} target='_blank' rel='noreferrer'>
+                      <button className='px-6 py-3'>{t('projects.viewLiveDemo')}</button>
+                    </a>
+                  )}
+                  {project.github && (
+                    <a href={project.github} target='_blank' rel='noreferrer'>
+                      <button className='px-6 py-3'>{t('common.code')}</button>
+                    </a>
+                  )}
+                </div>
               </div>
               <div className='rounded-3xl border border-gray-200 bg-bg-surface-light p-6 shadow-xl dark:border-border-subtle dark:bg-bg-surface'>
                 <p className='text-sm uppercase tracking-[0.3em] text-accent'>{t('common.technologies')}</p>

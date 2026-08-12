@@ -52,6 +52,7 @@ export const translations = {
       viewCaseStudy: 'View Case Study',
       viewOnGithub: 'View on GitHub',
       viewProject: 'View Project',
+      viewLiveDemo: 'Live Demo',
       items: [
         {
           slug: 'saas-pm-platform',
@@ -62,6 +63,7 @@ export const translations = {
           impact:
             'What it shows: production-style architecture — multi-tenancy enforced at the query layer, cache-aside reads, background job processing, Docker Compose, and CI with real Postgres/Redis service containers.',
           github: 'https://github.com/Subhashchandra3295/saas-pm-platform',
+          demo: 'https://saas-pm-platform.vercel.app',
           icon: '/assets/skills/nextjs.png',
           screenshot: '/assets/projects/saas-pm-platform.png',
         },
@@ -330,6 +332,7 @@ export const translations = {
       viewCaseStudy: 'Fallstudie ansehen',
       viewOnGithub: 'Auf GitHub ansehen',
       viewProject: 'Projekt ansehen',
+      viewLiveDemo: 'Live-Demo',
       items: [
         {
           slug: 'saas-pm-platform',
@@ -340,6 +343,7 @@ export const translations = {
           impact:
             'Was es zeigt: produktionsnahe Architektur — Multi-Tenancy auf Datenbankebene, Cache-Aside-Lesezugriffe, Hintergrundverarbeitung, Docker Compose und CI mit echten Postgres-/Redis-Service-Containern.',
           github: 'https://github.com/Subhashchandra3295/saas-pm-platform',
+          demo: 'https://saas-pm-platform.vercel.app',
           icon: '/assets/skills/nextjs.png',
           screenshot: '/assets/projects/saas-pm-platform.png',
         },
