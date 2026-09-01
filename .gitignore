@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Standalone repository developed alongside the portfolio
+/knowledgeops-ai/
+/enterprise-workflow-platform/

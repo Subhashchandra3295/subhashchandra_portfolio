@@ -11,16 +11,16 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className="pointer">
+    <main id="main-content" className="portfolio-page">
       <Head>
         <title>Subhashchandra | Full Stack Developer</title>
         <meta name="description" content={t('home.metaDescription')} />
       </Head>
     <Main />
+    <Projects />
     <About />
     <Skills />
-    <Projects />
     <Contact />
-    </div>
+    </main>
   )
 }

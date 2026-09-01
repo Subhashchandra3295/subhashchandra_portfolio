@@ -8,6 +8,44 @@ import { useLanguage } from '../../context/LanguageContext';
 
 const CASE_STUDIES = {
   en: {
+    'enterprise-workflow-platform': {
+      title: 'Enterprise Workflow Management Platform',
+      category: '.NET Enterprise Engineering / Full Stack',
+      summary:
+        'A complete workflow platform for controlled task ownership, approval-ready state transitions, auditability, and live delivery-risk monitoring.',
+      challenge:
+        'Enterprise task tools must stay easy to use while enforcing strict permissions, valid lifecycle changes, concurrent updates, and a reliable history of who changed what. They also need distinct experiences for everyday users and platform administrators.',
+      solution:
+        'A Clean Architecture .NET 10 solution separates domain rules, application use cases, EF Core infrastructure, and ASP.NET Core REST endpoints. JWT policies protect Admin, Manager, and Member operations. Angular provides the daily workflow workspace, while a Blazor console consumes the same API for administrative metrics and governance.',
+      highlights: [
+        'Audited workflow state machine, task assignment, priority, due dates, and SQL Server optimistic concurrency.',
+        'Role-aware REST endpoints, secure JWT authentication, Swagger/OpenAPI, dependency injection, async services, and a background SLA monitor.',
+        'Angular and Blazor frontends, EF Core migrations, xUnit tests, multi-stage Docker images, Docker Compose, and GitHub Actions CI/CD.',
+      ],
+      stack: ['C# 14', '.NET 10', 'ASP.NET Core', 'Angular 22', 'Blazor', 'EF Core', 'SQL Server', 'Docker'],
+      github: 'https://github.com/Subhashchandra3295/enterprise-workflow-platform',
+      outcome:
+        'The result is a runnable, documented source-code project that demonstrates senior-level .NET architecture across domain design, security, persistence, frontend delivery, testing, and deployment automation.',
+    },
+    'knowledgeops-ai': {
+      title: 'KnowledgeOps AI',
+      category: 'AI Engineering / Laravel Architecture',
+      summary:
+        'A secure internal knowledge assistant that answers from company documents with traceable citations, then turns approved requests into actions through MCP tools.',
+      challenge:
+        'Teams lose time searching scattered policies, manuals, and support history. A useful assistant must retrieve the right evidence, respect each user’s permissions, avoid unsupported answers, and never change business data without control.',
+      solution:
+        'Laravel handles authentication, document ingestion, queues, and the application API. Documents are chunked and embedded in PostgreSQL with pgvector; hybrid retrieval combines semantic and keyword results before the LLM produces a cited answer. An MCP server exposes a small set of typed support tools, while the agent requires human approval before every state-changing action.',
+      highlights: [
+        'Cited RAG responses with permission-aware hybrid retrieval and a clear “not enough evidence” fallback.',
+        'MCP tools for knowledge search and support-ticket creation with validated inputs.',
+        'An agent workflow with allowlisted tools, approval gates, audit trails, queued ingestion, and repeatable evaluation fixtures.',
+      ],
+      stack: ['Laravel', 'LLM + RAG', 'MCP', 'AI Agent', 'PostgreSQL + pgvector', 'Redis Queues'],
+      github: 'https://github.com/Subhashchandra3295/knowledgeops-ai',
+      outcome:
+        'The project demonstrates practical AI engineering: grounded answers, safe tool use, observable workflows, and a Laravel architecture that can grow beyond a prototype.',
+    },
     'enterprise-service-hub': {
       title: 'Enterprise Service Hub',
       category: 'Laravel Concept / Backend Architecture',
@@ -82,6 +120,44 @@ const CASE_STUDIES = {
     },
   },
   de: {
+    'enterprise-workflow-platform': {
+      title: 'Enterprise Workflow Management Platform',
+      category: '.NET Enterprise Engineering / Full Stack',
+      summary:
+        'Eine vollständige Workflow-Plattform für kontrollierte Aufgabenverteilung, nachvollziehbare Statusübergänge, Auditierbarkeit und Live-Monitoring von Lieferrisiken.',
+      challenge:
+        'Enterprise-Task-Systeme müssen einfach bedienbar bleiben und gleichzeitig Berechtigungen, gültige Lebenszyklusänderungen, parallele Aktualisierungen und einen zuverlässigen Änderungsverlauf durchsetzen. Zusätzlich brauchen Mitarbeitende und Plattformadministration unterschiedliche Oberflächen.',
+      solution:
+        'Eine .NET-10-Lösung nach Clean Architecture trennt Domänenregeln, Anwendungsfälle, EF-Core-Infrastruktur und ASP.NET-Core-REST-Endpunkte. JWT-Richtlinien schützen Operationen für Admin, Manager und Member. Angular bildet den täglichen Workflow-Arbeitsbereich ab; eine Blazor-Konsole nutzt dieselbe API für Kennzahlen und Governance.',
+      highlights: [
+        'Auditierte Workflow-State-Machine, Aufgabenverteilung, Prioritäten, Fälligkeiten und optimistische Nebenläufigkeit mit SQL Server.',
+        'Rollenbasierte REST-Endpunkte, sichere JWT-Authentifizierung, Swagger/OpenAPI, Dependency Injection, asynchrone Services und ein Background-Service für SLA-Monitoring.',
+        'Angular- und Blazor-Frontends, EF-Core-Migrationen, xUnit-Tests, mehrstufige Docker-Images, Docker Compose und GitHub-Actions-CI/CD.',
+      ],
+      stack: ['C# 14', '.NET 10', 'ASP.NET Core', 'Angular 22', 'Blazor', 'EF Core', 'SQL Server', 'Docker'],
+      github: 'https://github.com/Subhashchandra3295/enterprise-workflow-platform',
+      outcome:
+        'Das Ergebnis ist ein ausführbares, dokumentiertes Source-Code-Projekt, das Senior-.NET-Kompetenz in Domänendesign, Sicherheit, Persistenz, Frontend, Tests und Deployment-Automatisierung zeigt.',
+    },
+    'knowledgeops-ai': {
+      title: 'KnowledgeOps AI',
+      category: 'KI-Engineering / Laravel-Architektur',
+      summary:
+        'Ein sicherer interner Wissensassistent, der Antworten aus Unternehmensdokumenten mit nachvollziehbaren Quellen liefert und freigegebene Anfragen über MCP-Tools ausführt.',
+      challenge:
+        'Teams verlieren Zeit bei der Suche in verteilten Richtlinien, Handbüchern und Support-Verläufen. Ein hilfreicher Assistent muss passende Belege finden, Berechtigungen beachten, unbelegte Antworten vermeiden und darf Geschäftsdaten nie unkontrolliert verändern.',
+      solution:
+        'Laravel übernimmt Authentifizierung, Dokumentenimport, Queues und die Anwendungs-API. Dokumente werden in Abschnitte zerlegt und mit Embeddings in PostgreSQL und pgvector gespeichert. Eine hybride Suche kombiniert semantische und textbasierte Treffer, bevor das LLM eine Antwort mit Quellen erzeugt. Ein MCP-Server stellt wenige typisierte Support-Tools bereit; für jede verändernde Aktion verlangt der Agent eine menschliche Freigabe.',
+      highlights: [
+        'RAG-Antworten mit Quellen, berechtigungsbasierter hybrider Suche und einer klaren Rückmeldung bei fehlenden Belegen.',
+        'MCP-Tools für Wissenssuche und Ticket-Erstellung mit validierten Eingaben.',
+        'Agent-Workflow mit erlaubten Tools, Freigaben, Audit-Trail, Queue-basiertem Import und wiederholbaren Evaluationsfällen.',
+      ],
+      stack: ['Laravel', 'LLM + RAG', 'MCP', 'KI-Agent', 'PostgreSQL + pgvector', 'Redis Queues'],
+      github: 'https://github.com/Subhashchandra3295/knowledgeops-ai',
+      outcome:
+        'Das Projekt zeigt praxisnahes KI-Engineering: fundierte Antworten, sichere Tool-Nutzung, beobachtbare Workflows und eine Laravel-Architektur, die über einen Prototyp hinaus wachsen kann.',
+    },
     'enterprise-service-hub': {
       title: 'Enterprise Service Hub',
       category: 'Laravel Konzept / Backend-Architektur',
@@ -292,9 +368,16 @@ const ProjectDetailPage = () => {
             <Link href='/#projects'>
               <button className='px-5 py-3'>← {t('navbar.projects')}</button>
             </Link>
-            <Link href='/#contact'>
-              <button className='px-5 py-3'>{t('projects.cta')}</button>
-            </Link>
+            <div className='flex flex-wrap justify-end gap-3'>
+              {project.github && (
+                <a href={project.github} target='_blank' rel='noreferrer'>
+                  <button className='px-5 py-3'>{t('projects.viewOnGithub')}</button>
+                </a>
+              )}
+              <Link href='/#contact'>
+                <button className='px-5 py-3'>{t('projects.cta')}</button>
+              </Link>
+            </div>
           </div>
 
           <section className='overflow-hidden rounded-[2rem] border border-gray-200 bg-bg-surface-light shadow-2xl dark:border-border-subtle dark:bg-bg-surface'>
@@ -325,6 +408,18 @@ const ProjectDetailPage = () => {
               </div>
             </div>
           </section>
+
+          {demoProject?.screenshot && (
+            <section className='relative mt-8 aspect-[8/5] overflow-hidden rounded-[2rem] border border-gray-200 bg-bg-surface-light shadow-2xl dark:border-border-subtle dark:bg-bg-surface'>
+              <Image
+                src={demoProject.screenshot}
+                alt={`${project.title} — ${language === 'de' ? 'Anwendungsvorschau' : 'application preview'}`}
+                fill
+                sizes='(max-width: 1100px) 100vw, 1100px'
+                className='object-cover'
+              />
+            </section>
+          )}
 
           <section className='mt-8 grid gap-6 lg:grid-cols-3'>
             <div className='rounded-3xl border border-gray-200 bg-bg-surface-light p-6 shadow-xl dark:border-border-subtle dark:bg-bg-surface lg:col-span-2'>

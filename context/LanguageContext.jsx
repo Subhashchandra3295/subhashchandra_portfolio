@@ -46,6 +46,7 @@ export const translations = {
         'A mix of fully working demo apps and portfolio-safe case studies that show how I approach real-world full stack problems with Laravel, Symfony, Angular, React, Next.js, and modern databases.',
       caseStudy: 'Case Study',
       demoProject: 'Demo Project',
+      aiProject: 'AI Project',
       demoProjectsHeading: 'Demo Projects',
       caseStudiesHeading: 'Case Studies',
       cta: 'Discuss this project',
@@ -54,6 +55,30 @@ export const translations = {
       viewProject: 'View Project',
       viewLiveDemo: 'Live Demo',
       items: [
+        {
+          slug: 'enterprise-workflow-platform',
+          title: 'Enterprise Workflow Management Platform',
+          tech: 'C# | .NET 10 | ASP.NET Core | Angular | Blazor | EF Core | SQL Server',
+          summary:
+            'A production-style workflow platform with role-based task ownership, controlled state transitions, audit history, SLA monitoring, and separate employee and administrator experiences.',
+          impact:
+            'What it shows: Clean Architecture, secured REST APIs, JWT and role policies, EF Core and LINQ, optimistic concurrency, Angular operations UI, Blazor admin dashboard, background services, xUnit, Docker, and CI/CD.',
+          github: 'https://github.com/Subhashchandra3295/enterprise-workflow-platform',
+          icon: '/assets/skills/dotnet.svg',
+          screenshot: '/assets/projects/enterprise-workflow-platform.jpg',
+        },
+        {
+          slug: 'knowledgeops-ai',
+          title: 'KnowledgeOps AI',
+          tech: 'Laravel | LLM + RAG | MCP | AI Agent',
+          summary:
+            'A permission-aware knowledge assistant that answers questions from internal documents with citations and runs approved support actions through MCP tools.',
+          impact:
+            'What it shows: document ingestion, hybrid pgvector retrieval, grounded LLM answers, MCP tool contracts, human-approved agent workflows, queues, evaluation, and audit logs.',
+          github: 'https://github.com/Subhashchandra3295/knowledgeops-ai',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/knowledgeops-ai.jpg',
+        },
         {
           slug: 'saas-pm-platform',
           title: 'SaaS PM Platform',
@@ -278,6 +303,16 @@ export const translations = {
       projectsTitle: 'Projects',
       projects: [
         {
+          title: 'Enterprise Workflow Management Platform (C#, .NET 10, Angular, Blazor)',
+          program: 'Independent Engineering Project',
+          university: 'Open-source portfolio project',
+          points: [
+            'Designed a Clean Architecture workflow platform with role-based task assignment, auditable state transitions, EF Core persistence, optimized LINQ queries, and optimistic concurrency.',
+            'Delivered an Angular operations workspace and Blazor administration dashboard backed by secured ASP.NET Core REST APIs, JWT authorization, Swagger/OpenAPI, and async application services.',
+            'Implemented a background SLA monitor, SQL Server migrations and seed data, xUnit coverage, multi-stage Docker packaging, Docker Compose, and GitHub Actions CI/CD with GHCR publishing.',
+          ],
+        },
+        {
           title: 'Online Event Reminder System (ASP.NET MVC, C#)',
           program: "Master's Program Project",
           university: 'Savitribai Phule Pune University',
@@ -299,8 +334,8 @@ export const translations = {
   de: {
     navbar: {
       home: 'Startseite',
-      about: 'Uber mich',
-      skills: 'Fahigkeiten',
+      about: 'Über mich',
+      skills: 'Fähigkeiten',
       projects: 'Projekte',
       resume: 'Lebenslauf',
       contact: 'Kontakt',
@@ -339,6 +374,7 @@ export const translations = {
         'Eine Mischung aus voll funktionsfahigen Demo-Apps und portfolio-sicheren Fallstudien, die zeigen, wie ich reale Full-Stack-Probleme mit Laravel, Symfony, Angular, React, Next.js und modernen Datenbanken lose.',
       caseStudy: 'Fallstudie',
       demoProject: 'Demo-Projekt',
+      aiProject: 'KI-Projekt',
       demoProjectsHeading: 'Demo-Projekte',
       caseStudiesHeading: 'Fallstudien',
       cta: 'Dieses Projekt besprechen',
@@ -347,6 +383,30 @@ export const translations = {
       viewProject: 'Projekt ansehen',
       viewLiveDemo: 'Live-Demo',
       items: [
+        {
+          slug: 'enterprise-workflow-platform',
+          title: 'Enterprise Workflow Management Platform',
+          tech: 'C# | .NET 10 | ASP.NET Core | Angular | Blazor | EF Core | SQL Server',
+          summary:
+            'Eine produktionsnahe Workflow-Plattform mit rollenbasierter Aufgabenverteilung, kontrollierten Statusübergängen, Audit-Verlauf, SLA-Monitoring sowie getrennten Oberflächen für Mitarbeitende und Administration.',
+          impact:
+            'Was es zeigt: Clean Architecture, abgesicherte REST-APIs, JWT und Rollenrichtlinien, EF Core und LINQ, optimistische Nebenläufigkeit, Angular-Arbeitsbereich, Blazor-Admin-Dashboard, Background Services, xUnit, Docker und CI/CD.',
+          github: 'https://github.com/Subhashchandra3295/enterprise-workflow-platform',
+          icon: '/assets/skills/dotnet.svg',
+          screenshot: '/assets/projects/enterprise-workflow-platform.jpg',
+        },
+        {
+          slug: 'knowledgeops-ai',
+          title: 'KnowledgeOps AI',
+          tech: 'Laravel | LLM + RAG | MCP | KI-Agent',
+          summary:
+            'Ein berechtigungsbasierter Wissensassistent, der Fragen aus internen Dokumenten mit Quellenangaben beantwortet und freigegebene Support-Aktionen über MCP-Tools ausführt.',
+          impact:
+            'Was es zeigt: Dokumentenimport, hybride pgvector-Suche, fundierte LLM-Antworten, MCP-Tool-Verträge, freigabepflichtige Agent-Workflows, Queues, Evaluation und Audit-Logs.',
+          github: 'https://github.com/Subhashchandra3295/knowledgeops-ai',
+          icon: '/assets/skills/laravel.png',
+          screenshot: '/assets/projects/knowledgeops-ai.jpg',
+        },
         {
           slug: 'saas-pm-platform',
           title: 'SaaS PM Platform',
@@ -573,6 +633,16 @@ export const translations = {
       projectsTitle: 'Projekte',
       projects: [
         {
+          title: 'Enterprise Workflow Management Platform (C#, .NET 10, Angular, Blazor)',
+          program: 'Eigenständiges Engineering-Projekt',
+          university: 'Open-Source-Portfolio-Projekt',
+          points: [
+            'Eine Workflow-Plattform nach Clean Architecture mit rollenbasierter Aufgabenverteilung, nachvollziehbaren Statusübergängen, EF-Core-Persistenz, optimierten LINQ-Abfragen und optimistischer Nebenläufigkeit entworfen.',
+            'Einen Angular-Arbeitsbereich und ein Blazor-Administrationsdashboard auf Basis abgesicherter ASP.NET-Core-REST-APIs, JWT-Autorisierung, Swagger/OpenAPI und asynchroner Anwendungsdienste umgesetzt.',
+            'Background-Service für SLA-Monitoring, SQL-Server-Migrationen und Seed-Daten, xUnit-Tests, mehrstufige Docker-Images, Docker Compose und GitHub-Actions-CI/CD mit GHCR-Publishing implementiert.',
+          ],
+        },
+        {
           title: 'Online Event Reminder System (ASP.NET MVC, C#)',
           program: 'Masterarbeit-Projekt',
           university: 'Savitribai Phule Pune University',
@@ -595,6 +665,7 @@ export const translations = {
 
 const LanguageContext = createContext({
   language: 'en',
+  setLanguage: () => {},
   toggleLanguage: () => {},
   t: () => '',
 });
@@ -605,6 +676,7 @@ export const getByPath = (source, path) => {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState('en');
+  const [isLanguageReady, setIsLanguageReady] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -612,12 +684,14 @@ export const LanguageProvider = ({ children }) => {
     if (savedLanguage === 'en' || savedLanguage === 'de') {
       setLanguage(savedLanguage);
     }
+    setIsLanguageReady(true);
   }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || !isLanguageReady) return;
     localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-  }, [language]);
+    document.documentElement.lang = language;
+  }, [language, isLanguageReady]);
 
   const toggleLanguage = useCallback(() => {
     setLanguage((prev) => (prev === 'en' ? 'de' : 'en'));

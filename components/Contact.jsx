@@ -1,178 +1,40 @@
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
-import React, { useState } from 'react';
-import { AiOutlineMail } from 'react-icons/ai';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-import ContactImg from '../public/assets/contact.jpg';
+import { FiArrowUp, FiArrowUpRight, FiGithub } from 'react-icons/fi';
+import { FaLinkedinIn } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
+import { portfolioCopy } from '../context/portfolioCopy';
+import Logo from './Logo';
 
-const Contact = () => {
-  const { t } = useLanguage();
-
-  const [query, setQuery] = useState({
-    name: "",
-    email: "",
-    phone_number : "",
-    subject : "",
-    message : ""
-  });
-  const handleParam = () => (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setQuery((prevState) => ({
-      ...prevState,
-      [name]: value
-    }));
+export default function Contact() {
+  const { language, t } = useLanguage();
+  const copy = portfolioCopy[language];
+  const [status, setStatus] = useState('idle');
+  const submit = async (event) => {
+    event.preventDefault();
+    if (status === 'sending') return;
+    const form = event.currentTarget;
+    setStatus('sending');
+    try {
+      const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error('Message could not be sent');
+      form.reset();
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
-  const formSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    Object.entries(query).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
-    fetch("https://getform.io/f/c2f0712e-494b-4913-ac1b-0d0101b09f8e", {
-      method: "POST",
-      body: formData
-    }).then(() => setQuery({ name: "", email: "", message: "", phone_number: "", subject: "", }));
-  };
-  return (
-    <div id='contact' className='w-full lg:h-screen'>
-      <div className='max-w-[1240px] m-auto px-2 py-16 w-full '>
-        <p className='text-xl tracking-widest uppercase text-accent'>
-          {t('contact.title')}
-        </p>
-        <h2 className='py-4 text-text-primary-light dark:text-text-primary'>{t('contact.subtitle')}</h2>
-        <div className='grid lg:grid-cols-5 gap-8'>
-          {/* left */}
-          <div className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 dark:shadow-black/40 rounded-xl p-4 bg-bg-surface-light dark:bg-bg-surface'>
-            <div className='lg:p-4 h-full '>
-              <div>
-                <Image
-                  className='rounded-xl hover:scale-105 ease-in duration-300'
-                  src={ContactImg}
-                  alt='/'
-                />
-              </div>
-              <div className='text-text-primary-light dark:text-text-primary'>
-                <h2 className='py-2'>Subhashchandra Borad</h2>
-                <p>{t('contact.role')}</p>
-                <p className='py-4 text-text-muted-light dark:text-text-muted'>
-                  {t('contact.availability')}
-                </p>
-              </div>
-              <div>
-                <p className='uppercase pt-8 text-text-primary-light dark:text-text-primary'>{t('contact.connect')}</p>
-                <div className='flex items-center justify-between py-4'>
-                  <a
-                    href='https://www.linkedin.com/in/subhashchandra-borad/'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
-                      <FaLinkedinIn />
-                    </div>
-                  </a>
-                  <a
-                    href='https://github.com/Subhashchandra3295'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
-                      <FaGithub />
-                    </div>
-                  </a>
-
-                  <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
-                    <AiOutlineMail />
-                  </div>
-                  <Link href='/resume'>
-                    {/* <a> */}
-                      <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-6 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
-                        <BsFillPersonLinesFill />
-                      </div>
-                    {/* </a> */}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* right */}
-          <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 dark:shadow-black/40 rounded-xl lg:p-4 bg-bg-surface-light dark:bg-bg-surface'>
-            <div className='p-4'>
-              <form
-                action='https://getform.io/f/c2f0712e-494b-4913-ac1b-0d0101b09f8e'
-                method='POST'
-                encType='multipart/form-data'
-              >
-                <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
-                  <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.name')}</label>
-                    <input
-                      className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
-                      type='text'
-                      name='name'
-                    />
-                  </div>
-                  <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>
-                      {t('contact.phone')}
-                    </label>
-                    <input
-                      className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
-                      type='text'
-                      name='phone'
-                    />
-                  </div>
-                </div>
-                <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.email')}</label>
-                  <input
-                    className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
-                    type='email'
-                    name='email'
-                  />
-                </div>
-                <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.subject')}</label>
-                  <input
-                    className='border-2 rounded-lg p-3 flex border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
-                    type='text'
-                    name='subject'
-                  />
-                </div>
-                <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2 text-text-primary-light dark:text-text-primary'>{t('contact.message')}</label>
-                  <textarea
-                    className='border-2 rounded-lg p-3 border-gray-300 dark:border-border-subtle bg-bg-surface-light dark:bg-bg-surface text-text-primary-light dark:text-text-primary'
-                    rows='10'
-                    name='message'
-                  ></textarea>
-                </div>
-                <button className='w-full p-4 text-gray-100 mt-4'>
-                  {t('contact.send')}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div className='flex justify-center py-12'>
-          <Link href='/'>
-            {/* <a> */}
-              <div className='rounded-full shadow-lg shadow-gray-400 dark:shadow-black/40 p-4 cursor-pointer hover:scale-110 hover:shadow-glow ease-in duration-300'>
-                <HiOutlineChevronDoubleUp
-                  className='text-accent'
-                  size={30}
-                />
-              </div>
-            {/* </a> */}
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Contact;
+  return <>
+    <section id='contact' className='contact-section section-space'><div className='site-container contact-grid'>
+      <div className='contact-copy'><p className='eyebrow'>{copy.contactEyebrow}</p><h2>{copy.contactTitle[0]}<br /><span>{copy.contactTitle[1]}</span><FiArrowUpRight /></h2><p className='contact-intro'>{copy.contactIntro}</p><div className='contact-availability'><span className='status-dot' />{copy.contactNote}</div><div className='contact-socials'><a href='https://www.linkedin.com/in/subhashchandra-borad/' target='_blank' rel='noreferrer'><FaLinkedinIn />LinkedIn<FiArrowUpRight /></a><a href='https://github.com/Subhashchandra3295' target='_blank' rel='noreferrer'><FiGithub />GitHub<FiArrowUpRight /></a></div></div>
+      <form className='contact-form' action='https://getform.io/f/c2f0712e-494b-4913-ac1b-0d0101b09f8e' method='POST' encType='multipart/form-data' onSubmit={submit}>
+        <div className='form-row'><div className='form-field'><label htmlFor='contact-name'>{t('contact.name')}</label><input id='contact-name' name='name' autoComplete='name' placeholder={copy.namePlaceholder} required maxLength={120} /></div><div className='form-field'><label htmlFor='contact-email'>{t('contact.email')}</label><input id='contact-email' name='email' type='email' autoComplete='email' placeholder={copy.emailPlaceholder} required maxLength={254} /></div></div>
+        <div className='form-row'><div className='form-field'><label htmlFor='contact-subject'>{t('contact.subject')}</label><input id='contact-subject' name='subject' placeholder={copy.subjectPlaceholder} required maxLength={200} /></div><div className='form-field'><label htmlFor='contact-phone'>{t('contact.phone')} <span>({copy.optional})</span></label><input id='contact-phone' name='phone' type='tel' autoComplete='tel' placeholder='+49 …' maxLength={40} /></div></div>
+        <div className='form-field'><label htmlFor='contact-message'>{t('contact.message')}</label><textarea id='contact-message' name='message' rows={4} placeholder={copy.messagePlaceholder} required maxLength={5000} /></div>
+        <button type='submit' className='button button-lime send-button' disabled={status === 'sending'}>{status === 'sending' ? copy.sending : t('contact.send')}<FiArrowUpRight /></button>
+        <p className={`form-feedback ${status === 'error' ? 'form-error' : ''}`} role='status' aria-live='polite'>{status === 'sent' ? copy.sent : status === 'error' ? copy.error : copy.formNote}</p>
+      </form>
+    </div></section>
+    <footer className='site-container site-footer'><Link href='/' className='footer-brand' aria-label='Subhashchandra Borad — Home'><Logo size={42} decorative /></Link><p>© {new Date().getFullYear()} Subhashchandra Borad<span>{copy.footer}</span></p><Link href='/#home' className='back-to-top'>{copy.top}<FiArrowUp /></Link></footer>
+  </>;
+}
